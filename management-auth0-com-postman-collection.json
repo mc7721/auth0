@@ -1,0 +1,533 @@
+{
+    "id": "9eea6c99222a6af9a84c4194a5d82b0b",
+    "name": "management.auth0.com",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "8c8cbb1520b8314c5fc00b8ef55f7e81",
+            "name": "Get all clients",
+            "url": "http:\/\/management.auth0.com\/\/api\/v2\/clients",
+            "description": "Retrieves a list of all client applications. Accepts a list of fields to include or exclude.\n\n<strong>Important:<\/strong> The <code>client_secret<\/code> and <code>encryption_key<\/code> attributes can only be retrieved with the <code>read:client_keys<\/code> scope.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "fields",
+                    "description": "A comma separated list of fields to include or exclude (depending on include_fields) from the result, empty to retrieve all fields",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_fields",
+                    "description": "<code>true<\/code> if the fields specified are to be included in the result, <code>false<\/code> otherwise (defaults to <code>true<\/code>)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "The page number. Zero based.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "per_page",
+                    "description": "The amount of entries per page. Default: <code>50<\/code>. Max value: <code>100<\/code>. If not present, pagination will be disabled",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_totals",
+                    "description": "true if a query summary must be included in the result",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "is_global",
+                    "description": "Optionally filter on the global client parameter",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "is_first_party",
+                    "description": "Filter on whether or not a client is a first party client",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "app_type",
+                    "description": "A comma separated list of application types used to filter the returned clients (native, spa, regular_web, non_interactive, rms, box, cloudbees, concur, dropbox, mscrm, echosign, egnyte, newrelic, office365, salesforce, sentry, sharepoint, slack, springcm, zendesk, zoom)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "rawModeData": ""
+        },
+        {
+            "id": "92bc1f6c0ebb0b08eb26a596bbc25de5",
+            "name": "Create a client",
+            "url": "http:\/\/management.auth0.com\/\/api\/v2\/clients",
+            "description": "Creates a new client application. The samples on the right show most attributes that can be used. \n\nWe recommend to let us to generate a safe secret for you, but you can also provide your own with the <code>client_secret<\/code> parameter\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "rawModeData": ""
+        },
+        {
+            "id": "8f8bd808d9f84bfcc4fa0b24559ceef2",
+            "name": "Delete the email provider",
+            "url": "http:\/\/management.auth0.com\/\/api\/v2\/emails\/provider",
+            "description": "<strong>USE WITH CAUTION<\/strong>",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "rawModeData": ""
+        },
+        {
+            "id": "9753ad449e747125885d3d9015c09f0e",
+            "name": "Get the email provider",
+            "url": "http:\/\/management.auth0.com\/\/api\/v2\/emails\/provider",
+            "description": "This endpoint can be used to retrieve the name of the email provider.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "fields",
+                    "description": "A comma separated list of fields to include or exclude (depending on include_fields) from the result, empty to retrieve all fields",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_fields",
+                    "description": "<code>true<\/code> if the fields specified are to be included in the result, <code>false<\/code> otherwise (defaults to <code>true<\/code>)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "rawModeData": ""
+        },
+        {
+            "id": "7c1f37bb3bf166948605ea69ecf98158",
+            "name": "Update the email provider",
+            "url": "http:\/\/management.auth0.com\/\/api\/v2\/emails\/provider",
+            "description": "Can be used to change details for an email provider.\n\nDepending on the type of provider, the <code>credentials<\/code> object requires different attributes:\n<ul><li><code>mandrill<\/code> requires <code>api_key<\/code><\/li><li><code>sendgrid<\/code> requires <code>api_key<\/code><\/li><li><code>sparkpost<\/code> requires <code>api_key<\/code><\/li><li><code>ses<\/code> requires <code>accessKeyId<\/code>, <code>secretAccessKey<\/code> and <code>region<\/code><\/li><li><code>smtp<\/code> requires <code>smtp_host",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "patch",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "rawModeData": ""
+        },
+        {
+            "id": "c83a99cfd2d399af677598ecc455a287",
+            "name": "Search log events",
+            "url": "http:\/\/management.auth0.com\/\/api\/v2\/logs",
+            "description": "Retrieves log entries that match the specified search criteria (or list all entries if no criteria is used).<br\/>You can search with a criteria using the <code>q<\/code> parameter or you can search by a specific log ID (search by checkpoint):<br\/><br\/><h5>The search by criteria can use the following parameters:<\/h5><ul> <li><b>q:<\/b> Search Criteria using <a href=\"https:\/\/auth0.com\/docs\/users\/search\/v2\/query-syntax\">Query String Syntax<\/a><\/li><li><b>page:<\/b> The page number. Zero based<\/li><li>",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "page",
+                    "description": "The page number. Zero based.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "per_page",
+                    "description": "The amount of entries per page. Default: <code>50<\/code>. Max value: <code>100<\/code>. If not present, pagination will be disabled",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "The field to use for sorting. Use <code>field:order<\/code> where order is <code>1<\/code> for ascending and <code>-1<\/code> for descending. For example <code>date:-1<\/code>",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "fields",
+                    "description": "A comma separated list of fields to include or exclude (depending on include_fields) from the result, empty to retrieve all fields",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_fields",
+                    "description": "<code>true<\/code> if the fields specified are to be included in the result, <code>false<\/code> otherwise (defaults to <code>true<\/code>)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_totals",
+                    "description": "true if a query summary must be included in the result",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "from",
+                    "description": "Log Event Id to start retrieving logs. You can limit the amount of logs using the <code>take<\/code> parameter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "take",
+                    "description": "The total amount of entries to retrieve when using the <code>from<\/code> parameter. Default: <code>50<\/code>. Max value: <code>100<\/code>",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "q",
+                    "description": "Query in <a target='_new' href ='http:\/\/www.lucenetutorial.com\/lucene-query-syntax.html'>Lucene query string syntax<\/a>.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "rawModeData": ""
+        },
+        {
+            "id": "22fd5917790e825cb662ff5c7f9bd0e7",
+            "name": "Get a log event by id",
+            "url": "http:\/\/management.auth0.com\/\/api\/v2\/logs\/{id}",
+            "description": "Retrieves the data related to the log entry identified by id. This returns a single log entry representation as specified in the schema.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "The log_id of the log to retrieve",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "rawModeData": ""
+        },
+        {
+            "id": "7c650f244fef2ae64a31b18cc16dbc76",
+            "name": "Get all client grants",
+            "url": "http:\/\/management.auth0.com\/\/api\/v2\/client-grants",
+            "description": "Manage your <a href='https:\/\/auth0.com\/docs\/api-auth\/grant\/client-credentials'>Client Grants<\/a> (also called Client Credentials Grants). Using Client Grants, your Client can request an Auth0 access token using its credentials (a Client ID and a Client Secret). The access token then represents your Client during API calls.\n\nRefer to <a href='https:\/\/auth0.com\/docs\/api-auth\/config\/using-the-management-api'>Using the Management API for Setting Up a Client Credentials Grant Scenario<\/a> for additio",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "per_page",
+                    "description": "The amount of entries per page. Default: <code>50<\/code>. Max value: <code>100<\/code>. If not present, pagination will be disabled",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "The page number. Zero based.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_totals",
+                    "description": "true if a query summary must be included in the result",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "audience",
+                    "description": "URL Encoded audience of a client grant to filter",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "client_id",
+                    "description": "id of a client to filter",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "rawModeData": ""
+        },
+        {
+            "id": "f4c1eb5259639c4ba4615f6f615ace76",
+            "name": "Create a client grant",
+            "url": "http:\/\/management.auth0.com\/\/api\/v2\/client-grants",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "rawModeData": ""
+        },
+        {
+            "id": "fce8a38dd9f25ac3b39afa136b6ba27c",
+            "name": "List or search users",
+            "url": "http:\/\/management.auth0.com\/\/api\/v2\/users",
+            "description": "This endpoint can be used to retrieve a list of users. With this endpoint it is possible to:\n\n- Specify a search criteria for users\n- Sort the users to be returned\n- Select the fields to be returned\n- Specify the amount of users to retrieve per page and the page number\n <!-- both v2 and v3 are available -->\nThe <code>q<\/code> query parameter can be used to get users that match the specified criteria.\n\n- <a href=\"https:\/\/auth0.com\/docs\/users\/search\/v3\/query-syntax\">Query string syntax for user se",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "per_page",
+                    "description": "The amount of entries per page. Default: <code>50<\/code>. Max value: <code>100<\/code>. If not present, pagination will be disabled",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "The page number. Zero based.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_totals",
+                    "description": "true if a query summary must be included in the result",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "The field to use for sorting. Use <code>field:order<\/code> where order is <code>1<\/code> for ascending and <code>-1<\/code> for descending. For example <code>date:-1<\/code>",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "connection",
+                    "description": "Connection filter. Only applies when using <code>search_engine=v1<\/code>. To filter by connection with <code>search_engine=v2|v3<\/code>, use <code>q=identities.connection:\"connection_name\"<\/code>",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "fields",
+                    "description": "A comma separated list of fields to include or exclude (depending on include_fields) from the result, empty to retrieve all fields",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_fields",
+                    "description": "<code>true<\/code> if the fields specified are to be included in the result, <code>false<\/code> otherwise (defaults to <code>true<\/code>)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "q",
+                    "description": "Query in <a target='_new' href ='http:\/\/www.lucenetutorial.com\/lucene-query-syntax.html'>Lucene query string syntax<\/a>.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "search_engine",
+                    "description": "The version of the search engine",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "rawModeData": ""
+        },
+        {
+            "id": "876be236cfd9a562dc0fcc338ce54040",
+            "name": "Create a user",
+            "url": "http:\/\/management.auth0.com\/\/api\/v2\/users",
+            "description": "Creates a new user according to the JSON object received in <code>body<\/code>. It works <strong>only<\/strong> for <a href=\"https:\/\/auth0.com\/docs\/connections\/database\">database<\/a> and <a href=\"https:\/\/auth0.com\/docs\/connections\/passwordless\">passwordless<\/a> connections.<br\/>\nThe samples on the right show you every attribute that could be used. The attribute <code>connection<\/code> is always mandatory but depending on the type of connection you are using there could be others too. For instance,",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "rawModeData": ""
+        },
+        {
+            "id": "d175ad1065900811efa28038e80e2ebc",
+            "name": "Create an email verification ticket",
+            "url": "http:\/\/management.auth0.com\/\/api\/v2\/tickets\/email-verification",
+            "description": "This endpoint can be used to create a ticket to verify a user's email.\n\nLearn more about <a href=\"https:\/\/auth0.com\/docs\/email\/custom#verification-email\">Verification Emails.<\/a> ",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "rawModeData": ""
+        }
+    ]
+}
