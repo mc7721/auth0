@@ -1,0 +1,241 @@
+{
+    "name": "Auth0",
+    "description": "The new way to solve Identity",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/11272-auth0.jpg",
+    "tags": [
+        "api service provider",
+        "authentication",
+        "have api",
+        "have swagger",
+        "identities",
+        "oauth",
+        "relative data",
+        "service api",
+        "service level agreement",
+        "target",
+        "users"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/auth0\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Auth0",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/11272-auth0.jpg",
+            "humanURL": "http:\/\/auth0.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/auth0-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0.json"
+                }
+            ]
+        },
+        {
+            "name": "Auth0 Users API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/11272-auth0.jpg",
+            "humanURL": "http:\/\/auth0.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/auth0-users-api-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-users-api.json"
+                }
+            ]
+        },
+        {
+            "name": "Auth0 Blacklists API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/11272-auth0.jpg",
+            "humanURL": "http:\/\/auth0.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/auth0-blacklists-api-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-blacklists-api.json"
+                }
+            ]
+        },
+        {
+            "name": "Auth0 Jobs API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/11272-auth0.jpg",
+            "humanURL": "http:\/\/auth0.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/auth0-jobs-api-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-jobs-api.json"
+                }
+            ]
+        },
+        {
+            "name": "Auth0 Stats API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/11272-auth0.jpg",
+            "humanURL": "http:\/\/auth0.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/auth0-stats-api-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-stats-api.json"
+                }
+            ]
+        },
+        {
+            "name": "Auth0 API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/11272-auth0.jpg",
+            "humanURL": "http:\/\/auth0.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/auth0-api-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-api.json"
+                }
+            ]
+        },
+        {
+            "name": "management.auth0.com",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/11272-auth0.jpg",
+            "humanURL": "http:\/\/auth0.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/management-auth0-com-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/management-auth0-com.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "https:\/\/auth0.com\/blog\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/feeds.feedburner.com\/auth0"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/auth0"
+        },
+        {
+            "type": "Developers",
+            "url": "https:\/\/auth0.com\/docs\/apiv2"
+        },
+        {
+            "type": "Email",
+            "url": "privacy@auth0.com"
+        },
+        {
+            "type": "Email",
+            "url": "legal@auth0.com"
+        },
+        {
+            "type": "Email",
+            "url": "ricky@auth0.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/auth0"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/11272-2019-09-02-22-00-14.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/11272-2019-09-03-23-36-27.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/11272-2019-09-03-23-40-39.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/11272-2019-09-03-23-14-57.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/11272-2019-09-04-11-56-48.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/11272-2019-09-04-10-26-23.json"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/auth0.com\/pricing"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/auth0.com\/pricing"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/auth0.com\/pricing"
+        },
+        {
+            "type": "Service Level Agreement",
+            "url": "https:\/\/auth0.com\/docs\/sla"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/authzero"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/auth0"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/auth0.com\/"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/auth0.com"
+        }
+    ]
+}
