@@ -1,0 +1,667 @@
+{
+    "id": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+    "name": "Auth0 API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "e1f3e3cca319dc2a840e52df110326bd",
+            "name": "Get Blacklists Tokens",
+            "url": "httpslogin.auth0.comapi\/v2\/\/blacklists\/tokens",
+            "description": "Get blacklists tokens.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "aud",
+                    "description": "The JWTs aud claim. The client_id of the client for which it was issued",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "440cf83d51c5d567045d303f17acd2cd",
+            "name": "Post Blacklists Tokens",
+            "url": "httpslogin.auth0.comapi\/v2\/\/blacklists\/tokens",
+            "description": "Post blacklists tokens.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "0a0574fed44d5b7c57e05de382b18f7a",
+            "name": "Get Clients",
+            "url": "httpslogin.auth0.comapi\/v2\/\/clients",
+            "description": "Get clients.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "exclude_fields",
+                    "description": "true if the fields specified are to be excluded from the result, false otherwise.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "fields",
+                    "description": "A comma separated list of fields to include or exclude (depending on exclude_fields) from the result. Empty to retrieve all fields.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "86a4d78709ced2b6afe9939a329ade1b",
+            "name": "Post Clients",
+            "url": "httpslogin.auth0.comapi\/v2\/\/clients",
+            "description": "Post clients.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "bbb9cd80c24d24b20b18dc6066ea759a",
+            "name": "Delete Clients",
+            "url": "httpslogin.auth0.comapi\/v2\/\/clients\/{id}",
+            "description": "Delete clients.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "The client_id of the client to delete.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "adaf2c09a3aeec043a4e8b1dd4dd5b28",
+            "name": "Get Clients",
+            "url": "httpslogin.auth0.comapi\/v2\/\/clients\/{id}",
+            "description": "Get clients.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "exclude_fields",
+                    "description": "true if the fields specified are to be excluded from the result, false otherwise.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "fields",
+                    "description": "A comma separated list of fields to include or exclude (depending on exclude_fields) from the result. Empty to retrieve all fields.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "The client_id of the client to delete.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "de978add15d0237fefde3acccbfb91d9",
+            "name": "Patch Clients",
+            "url": "httpslogin.auth0.comapi\/v2\/\/clients\/{id}",
+            "description": "Patch clients.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "patch",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "The client_id of the client to delete.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "1b4eb3829ef8353dc29265276a0f81ee",
+            "name": "Post Jobs Users Imports",
+            "url": "httpslogin.auth0.comapi\/v2\/\/jobs\/users-imports",
+            "description": "Post jobs users imports.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "connection_name",
+                    "description": "The name of the connection to which users will be added.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "users",
+                    "description": "A file containing the users to import",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "67aa1a0980988825213fb9deeffe0cba",
+            "name": "Get Jobs Job",
+            "url": "httpslogin.auth0.comapi\/v2\/\/jobs\/{job_id}",
+            "description": "Get jobs job.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "job_id",
+                    "description": "The id of the job",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "53b176d1a5ff9d9af432d0f84de55364",
+            "name": "Get Stats Active Users",
+            "url": "httpslogin.auth0.comapi\/v2\/\/stats\/active-users",
+            "description": "Get stats active users.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "fddc61b1fb643ca6a0fd2c0975e33a71",
+            "name": "Get Stats Daily",
+            "url": "httpslogin.auth0.comapi\/v2\/\/stats\/daily",
+            "description": "Get stats daily.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "from",
+                    "description": "The first day of the period (inclusive) in YYYYMMDD format.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "to",
+                    "description": "The last day of the period (inclusive) in YYYYMMDD format.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "8740fce9c174a26ed3fe2ae0b7f74a87",
+            "name": "Delete Users",
+            "url": "httpslogin.auth0.comapi\/v2\/\/users",
+            "description": "Delete users.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "17d803b7dcea7c07f891f6436536d82c",
+            "name": "Get Users",
+            "url": "httpslogin.auth0.comapi\/v2\/\/users",
+            "description": "Get users.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "connection",
+                    "description": "Connection filter.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "exclude_fields",
+                    "description": "true if the fields specified are to be excluded from the result, false otherwise.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "fields",
+                    "description": "A comma separated list of fields to include or exclude (depending on exclude_fields) from the result. Empty to retrieve all fields.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "include_totals",
+                    "description": "true if a query summary must be included in the result.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "The page number. Zero based.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "per_page",
+                    "description": "The amount of entries per page.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort",
+                    "description": "The field to use for sorting. 1 == ascending and -1 == descending.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "8157b6dd4c167bcf6e1b959c0aedd7fe",
+            "name": "Post Users",
+            "url": "httpslogin.auth0.comapi\/v2\/\/users",
+            "description": "Post users.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "aaf0c936c3e88b2f9f007cbf11429db0",
+            "name": "Delete Users",
+            "url": "httpslogin.auth0.comapi\/v2\/\/users\/{id}",
+            "description": "Delete users.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "The client_id of the client to delete.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "358603706c6a6edbe3e07df35beb4df4",
+            "name": "Get Users",
+            "url": "httpslogin.auth0.comapi\/v2\/\/users\/{id}",
+            "description": "Get users.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "exclude_fields",
+                    "description": "true if the fields specified are to be excluded from the result, false otherwise.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "fields",
+                    "description": "A comma separated list of fields to include or exclude (depending on exclude_fields) from the result. Empty to retrieve all fields.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "The client_id of the client to delete.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "179c0aee1f4584c160aef3f6e2c6f396",
+            "name": "Patch Users",
+            "url": "httpslogin.auth0.comapi\/v2\/\/users\/{id}",
+            "description": "Patch users.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "patch",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "The client_id of the client to delete.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        },
+        {
+            "id": "22a578c31dbeae4d20ad887e59fd9c72",
+            "name": "Delete Users Multifactor Prover",
+            "url": "httpslogin.auth0.comapi\/v2\/\/users\/{id}\/multifactor\/{provider}",
+            "description": "Delete users multifactor prover.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "The client_id of the client to delete.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "provider",
+                    "description": "The multifactor provider. Supported values duo or google-authenticator",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "rawModeData": ""
+        }
+    ]
+}
