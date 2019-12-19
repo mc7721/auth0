@@ -1,0 +1,42 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "v1",
+        "title": "Auth0 Jobs API",
+        "description": "",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httplogin.auth0.com\/jobs"
+    ],
+    "paths": [],
+    "components": {
+        "schemas": {
+            "": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "type": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "tenant": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "connection": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "_id": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            }
+        }
+    }
+}
