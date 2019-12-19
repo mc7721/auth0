@@ -1,0 +1,334 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "Auth0",
+        "description": "",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httplogin.auth0.com\/clients"
+    ],
+    "paths": [],
+    "components": {
+        "schemas": {
+            "": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "client_secret": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "callbacks": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "allowed_origins": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "client_aliases": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "allowed_clients": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "jwt_configuration": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "signing_keys": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "encryption_key": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "sso": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "custom_login_page_off": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "custom_login_page": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "custom_login_page_preview": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "form_template": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "addons": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "lifetime_in_seconds": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "secret_not_encoded": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "scopes": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "alg": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "pub": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "cert": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "is_heroku_app": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "aws": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "azure_sb": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "box": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "cloudbees": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "concur": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "dropbox": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "echosign": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "egnyte": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "firebase": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "newrelic": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "office365": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "salesforce": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "salesforce_api": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "salesforce_sandbox_api": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "samlp": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "sap_api": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "sharepoint": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "springcm": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "wams": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "wsfed": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "zendesk": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "zoom": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "principal": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "role": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "namespace": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "sasKeyName": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "sasKey": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "entityPath": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "expiration": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "secret": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "entity_id": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "clientid": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "communityName": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "community_url_section": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "mappings": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "audience": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "recipient": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "createUpnClaim": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "mapUnknownClaimsAsIs": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "passthroughClaimsWithNoMapping": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "mapIdentities": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "signatureAlgorithm": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "digestAlgorithm": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "issuer": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "destination": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "lifetimeInSeconds": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "signResponse": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "nameIdentifierFormat": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "nameIdentifierProbes": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "authnContextClassRef": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "usernameAttribute": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "tokenEndpointUrl": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "scope": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "servicePassword": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "masterkey": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "account": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            }
+        }
+    }
+}
