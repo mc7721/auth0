@@ -1,0 +1,30 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "v1",
+        "title": "Auth0 Stats API",
+        "description": "",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httplogin.auth0.com\/stats"
+    ],
+    "paths": [],
+    "components": {
+        "schemas": {
+            "": {
+                "type": "object",
+                "properties": {
+                    "date": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "logins": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            }
+        }
+    }
+}
