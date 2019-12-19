@@ -1,0 +1,106 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "v1",
+        "title": "Auth0 Users API",
+        "description": "",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httplogin.auth0.com\/users"
+    ],
+    "paths": [],
+    "components": {
+        "schemas": {
+            "": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "email_verified": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "picture": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "username": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "user_id": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "name": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "nickname": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "created_at": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "identities_ids": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "identities": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "app_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "user_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "password": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "phone_number": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "given_name": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "family_name": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "connection": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "blocked": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "verify_email": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "verify_password": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "client_id": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            }
+        }
+    }
+}
