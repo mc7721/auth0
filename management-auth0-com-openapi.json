@@ -1,0 +1,4202 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "2",
+        "title": "management.auth0.com",
+        "description": "",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "httpsmanagement.auth0.com\/",
+        "http:\/\/management.auth0.com\/"
+    ],
+    "paths": {
+        "\/api\/v2\/clients": {
+            "get": {
+                "summary": "Get all clients",
+                "description": "Retrieves a list of all client applications. Accepts a list of fields to include or exclude.\n\n<strong>Important:<\/strong> The <code>client_secret<\/code> and <code>encryption_key<\/code> attributes can only be retrieved with the <code>read:client_keys<\/code> scope.\n",
+                "operationId": "GetClients",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "A comma separated list of fields to include or exclude (depending on include_fields) from the result, empty to retrieve all fields"
+                    },
+                    {
+                        "name": "include_fields",
+                        "in": "query",
+                        "description": "<code>true<\/code> if the fields specified are to be included in the result, <code>false<\/code> otherwise (defaults to <code>true<\/code>)"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The page number. Zero based."
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "The amount of entries per page. Default: <code>50<\/code>. Max value: <code>100<\/code>. If not present, pagination will be disabled"
+                    },
+                    {
+                        "name": "include_totals",
+                        "in": "query",
+                        "description": "true if a query summary must be included in the result"
+                    },
+                    {
+                        "name": "is_global",
+                        "in": "query",
+                        "description": "Optionally filter on the global client parameter"
+                    },
+                    {
+                        "name": "is_first_party",
+                        "in": "query",
+                        "description": "Filter on whether or not a client is a first party client"
+                    },
+                    {
+                        "name": "app_type",
+                        "in": "query",
+                        "description": "A comma separated list of application types used to filter the returned clients (native, spa, regular_web, non_interactive, rms, box, cloudbees, concur, dropbox, mscrm, echosign, egnyte, newrelic, office365, salesforce, sentry, sharepoint, slack, springcm, zendesk, zoom)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The clients were retrieved. See <strong>Response Class<\/strong> below for schema.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/get_provider_response"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a client",
+                "description": "Creates a new client application. The samples on the right show most attributes that can be used. \n\nWe recommend to let us to generate a safe secret for you, but you can also provide your own with the <code>client_secret<\/code> parameter\n",
+                "operationId": "PostClients",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/api\/v2\/emails\/provider": {
+            "delete": {
+                "summary": "Delete the email provider",
+                "description": "<strong>USE WITH CAUTION<\/strong>",
+                "operationId": "DeleteProvider",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The clients were retrieved. See <strong>Response Class<\/strong> below for schema.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/get_provider_response"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Get the email provider",
+                "description": "This endpoint can be used to retrieve the name of the email provider.",
+                "operationId": "GetProvider",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "A comma separated list of fields to include or exclude (depending on include_fields) from the result, empty to retrieve all fields"
+                    },
+                    {
+                        "name": "include_fields",
+                        "in": "query",
+                        "description": "<code>true<\/code> if the fields specified are to be included in the result, <code>false<\/code> otherwise (defaults to <code>true<\/code>)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The clients were retrieved. See <strong>Response Class<\/strong> below for schema.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/get_provider_response"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "summary": "Update the email provider",
+                "description": "Can be used to change details for an email provider.\n\nDepending on the type of provider, the <code>credentials<\/code> object requires different attributes:\n<ul><li><code>mandrill<\/code> requires <code>api_key<\/code><\/li><li><code>sendgrid<\/code> requires <code>api_key<\/code><\/li><li><code>sparkpost<\/code> requires <code>api_key<\/code><\/li><li><code>ses<\/code> requires <code>accessKeyId<\/code>, <code>secretAccessKey<\/code> and <code>region<\/code><\/li><li><code>smtp<\/code> requires <code>smtp_host",
+                "operationId": "PatchProvider",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/api\/v2\/logs": {
+            "get": {
+                "summary": "Search log events",
+                "description": "Retrieves log entries that match the specified search criteria (or list all entries if no criteria is used).<br\/>You can search with a criteria using the <code>q<\/code> parameter or you can search by a specific log ID (search by checkpoint):<br\/><br\/><h5>The search by criteria can use the following parameters:<\/h5><ul> <li><b>q:<\/b> Search Criteria using <a href=\"https:\/\/auth0.com\/docs\/users\/search\/v2\/query-syntax\">Query String Syntax<\/a><\/li><li><b>page:<\/b> The page number. Zero based<\/li><li>",
+                "operationId": "GetLogs",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The page number. Zero based."
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "The amount of entries per page. Default: <code>50<\/code>. Max value: <code>100<\/code>. If not present, pagination will be disabled"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "The field to use for sorting. Use <code>field:order<\/code> where order is <code>1<\/code> for ascending and <code>-1<\/code> for descending. For example <code>date:-1<\/code>"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "A comma separated list of fields to include or exclude (depending on include_fields) from the result, empty to retrieve all fields"
+                    },
+                    {
+                        "name": "include_fields",
+                        "in": "query",
+                        "description": "<code>true<\/code> if the fields specified are to be included in the result, <code>false<\/code> otherwise (defaults to <code>true<\/code>)"
+                    },
+                    {
+                        "name": "include_totals",
+                        "in": "query",
+                        "description": "true if a query summary must be included in the result"
+                    },
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "description": "Log Event Id to start retrieving logs. You can limit the amount of logs using the <code>take<\/code> parameter."
+                    },
+                    {
+                        "name": "take",
+                        "in": "query",
+                        "description": "The total amount of entries to retrieve when using the <code>from<\/code> parameter. Default: <code>50<\/code>. Max value: <code>100<\/code>"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "Query in <a target='_new' href ='http:\/\/www.lucenetutorial.com\/lucene-query-syntax.html'>Lucene query string syntax<\/a>."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The clients were retrieved. See <strong>Response Class<\/strong> below for schema.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/get_provider_response"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/api\/v2\/logs\/{id}": {
+            "get": {
+                "summary": "Get a log event by id",
+                "description": "Retrieves the data related to the log entry identified by id. This returns a single log entry representation as specified in the schema.",
+                "operationId": "GetLogsById",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The log_id of the log to retrieve"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The clients were retrieved. See <strong>Response Class<\/strong> below for schema.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/get_provider_response"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/api\/v2\/client-grants": {
+            "get": {
+                "summary": "Get all client grants",
+                "description": "Manage your <a href='https:\/\/auth0.com\/docs\/api-auth\/grant\/client-credentials'>Client Grants<\/a> (also called Client Credentials Grants). Using Client Grants, your Client can request an Auth0 access token using its credentials (a Client ID and a Client Secret). The access token then represents your Client during API calls.\n\nRefer to <a href='https:\/\/auth0.com\/docs\/api-auth\/config\/using-the-management-api'>Using the Management API for Setting Up a Client Credentials Grant Scenario<\/a> for additio",
+                "operationId": "GetClientGrants",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "The amount of entries per page. Default: <code>50<\/code>. Max value: <code>100<\/code>. If not present, pagination will be disabled"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The page number. Zero based."
+                    },
+                    {
+                        "name": "include_totals",
+                        "in": "query",
+                        "description": "true if a query summary must be included in the result"
+                    },
+                    {
+                        "name": "audience",
+                        "in": "query",
+                        "description": "URL Encoded audience of a client grant to filter"
+                    },
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "description": "id of a client to filter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The clients were retrieved. See <strong>Response Class<\/strong> below for schema.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/get_provider_response"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a client grant",
+                "description": "",
+                "operationId": "PostClientGrants",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/api\/v2\/users": {
+            "get": {
+                "summary": "List or search users",
+                "description": "This endpoint can be used to retrieve a list of users. With this endpoint it is possible to:\n\n- Specify a search criteria for users\n- Sort the users to be returned\n- Select the fields to be returned\n- Specify the amount of users to retrieve per page and the page number\n <!-- both v2 and v3 are available -->\nThe <code>q<\/code> query parameter can be used to get users that match the specified criteria.\n\n- <a href=\"https:\/\/auth0.com\/docs\/users\/search\/v3\/query-syntax\">Query string syntax for user se",
+                "operationId": "GetUsers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "The amount of entries per page. Default: <code>50<\/code>. Max value: <code>100<\/code>. If not present, pagination will be disabled"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The page number. Zero based."
+                    },
+                    {
+                        "name": "include_totals",
+                        "in": "query",
+                        "description": "true if a query summary must be included in the result"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "The field to use for sorting. Use <code>field:order<\/code> where order is <code>1<\/code> for ascending and <code>-1<\/code> for descending. For example <code>date:-1<\/code>"
+                    },
+                    {
+                        "name": "connection",
+                        "in": "query",
+                        "description": "Connection filter. Only applies when using <code>search_engine=v1<\/code>. To filter by connection with <code>search_engine=v2|v3<\/code>, use <code>q=identities.connection:\"connection_name\"<\/code>"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "A comma separated list of fields to include or exclude (depending on include_fields) from the result, empty to retrieve all fields"
+                    },
+                    {
+                        "name": "include_fields",
+                        "in": "query",
+                        "description": "<code>true<\/code> if the fields specified are to be included in the result, <code>false<\/code> otherwise (defaults to <code>true<\/code>)"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "Query in <a target='_new' href ='http:\/\/www.lucenetutorial.com\/lucene-query-syntax.html'>Lucene query string syntax<\/a>."
+                    },
+                    {
+                        "name": "search_engine",
+                        "in": "query",
+                        "description": "The version of the search engine"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The clients were retrieved. See <strong>Response Class<\/strong> below for schema.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/get_provider_response"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a user",
+                "description": "Creates a new user according to the JSON object received in <code>body<\/code>. It works <strong>only<\/strong> for <a href=\"https:\/\/auth0.com\/docs\/connections\/database\">database<\/a> and <a href=\"https:\/\/auth0.com\/docs\/connections\/passwordless\">passwordless<\/a> connections.<br\/>\nThe samples on the right show you every attribute that could be used. The attribute <code>connection<\/code> is always mandatory but depending on the type of connection you are using there could be others too. For instance,",
+                "operationId": "PostUsers",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/api\/v2\/tickets\/email-verification": {
+            "post": {
+                "summary": "Create an email verification ticket",
+                "description": "This endpoint can be used to create a ticket to verify a user's email.\n\nLearn more about <a href=\"https:\/\/auth0.com\/docs\/email\/custom#verification-email\">Verification Emails.<\/a> ",
+                "operationId": "PostEmailVerification",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "get_clients_by_id_response": {
+                "type": "object",
+                "properties": {
+                    "addons": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "allowed_clients": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_logout_urls": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_origins": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "app_type": {
+                        "description": "The type of application this client represents",
+                        "type": "string"
+                    },
+                    "callbacks": {
+                        "description": "The URLs that Auth0 can use to as a callback for the client",
+                        "type": "array"
+                    },
+                    "client_aliases": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "client_id": {
+                        "description": "The id of the client",
+                        "type": "string"
+                    },
+                    "client_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "client_secret": {
+                        "description": "The client secret, it must not be public",
+                        "type": "string"
+                    },
+                    "cross_origin_auth": {
+                        "description": "<code>true<\/code> if this client can be used to make cross-origin authentication requests, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "cross_origin_loc": {
+                        "description": "Url fo the location in your site where the cross origin verification takes place for the cross-origin auth flow when performing Auth in your own domain instead of Auth0 hosted login page.",
+                        "type": "string"
+                    },
+                    "custom_login_page": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "custom_login_page_on": {
+                        "description": "<code>true<\/code> if the custom login page is to be used, <code>false<\/code> otherwise. Defaults to true",
+                        "type": "boolean"
+                    },
+                    "custom_login_page_preview": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Free text description of the purpose of the Client. (Max character length: <code>140<\/code>)",
+                        "type": "string"
+                    },
+                    "encryption_key": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "form_template": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "is_first_party": {
+                        "description": "Whether this client a first party client or not",
+                        "type": "boolean"
+                    },
+                    "jwt_configuration": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "logo_uri": {
+                        "description": "The URL of the client logo (recommended size: 150x150)",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "oidc_conformant": {
+                        "description": "Whether this client will conform to strict OIDC specifications",
+                        "type": "boolean"
+                    },
+                    "signing_keys": {
+                        "description": "Client signing keys.",
+                        "type": "array"
+                    },
+                    "sso": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "sso_disabled": {
+                        "description": "<code>true<\/code> to disable Single Sign On, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "token_endpoint_auth_method": {
+                        "description": "Defines the requested authentication method for the token endpoint. Possible values are 'none' (public client without a client secret), 'client_secret_post' (client uses HTTP POST parameters) or 'client_secret_basic' (client uses HTTP Basic)",
+                        "type": "string"
+                    },
+                    "web_origins": {
+                        "description": "A set of URLs that represents valid web origins for use with web message response mode",
+                        "type": "array"
+                    }
+                }
+            },
+            "addons": {
+                "type": "object"
+            },
+            "allowed_clients": {
+                "type": "array"
+            },
+            "allowed_logout_urls": {
+                "type": "array"
+            },
+            "allowed_origins": {
+                "type": "array"
+            },
+            "callbacks": {
+                "type": "array"
+            },
+            "client_aliases": {
+                "type": "array"
+            },
+            "client_metadata": {
+                "type": "object"
+            },
+            "encryption_key": {
+                "type": "object"
+            },
+            "jwt_configuration": {
+                "type": "object"
+            },
+            "mobile": {
+                "type": "object"
+            },
+            "signing_keys": {
+                "type": "array"
+            },
+            "web_origins": {
+                "type": "array"
+            },
+            "get_clients_by_id_response_addons": {
+                "type": "object"
+            },
+            "get_clients_by_id_response_android": {
+                "type": "object",
+                "properties": {
+                    "app_package_name": {
+                        "description": "Application package name found in <code>AndroidManifest.xml<\/code>",
+                        "type": "string"
+                    },
+                    "sha256_cert_fingerprints": {
+                        "description": "The SHA256 fingerprints of your app's signing certificate. Multiple fingerprints can be used to support different versions of your app, such as debug and production builds",
+                        "type": "array"
+                    }
+                }
+            },
+            "sha256_cert_fingerprints": {
+                "type": "array"
+            },
+            "get_clients_by_id_response_client_metadata": {
+                "type": "object"
+            },
+            "get_clients_by_id_response_encryption_key": {
+                "type": "object",
+                "properties": {
+                    "cert": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "pub": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "get_clients_by_id_response_ios": {
+                "type": "object",
+                "properties": {
+                    "app_bundle_identifier": {
+                        "description": "Assigned by the developer to the app as its unique identifier inside the store, usually is a reverse domain plus the app name: <code>com.you.MyApp<\/code>",
+                        "type": "string"
+                    },
+                    "team_id": {
+                        "description": "Identifier assigned to the account that signs and upload the app to the store",
+                        "type": "string"
+                    }
+                }
+            },
+            "get_clients_by_id_response_jwt_configuration": {
+                "type": "object",
+                "properties": {
+                    "alg": {
+                        "description": "Algorithm uses to sign JWTs",
+                        "type": "string"
+                    },
+                    "lifetime_in_seconds": {
+                        "description": "The amount of seconds the JWT will be valid (affects <code>exp<\/code> claim)",
+                        "type": "integer"
+                    },
+                    "scopes": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "secret_encoded": {
+                        "description": "<code>true<\/code> if the client secret is base64 encoded, <code>false<\/code> otherwise. Defaults to <code>true<\/code>",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "scopes": {
+                "type": "object"
+            },
+            "get_clients_by_id_response_mobile": {
+                "type": "object",
+                "properties": {
+                    "android": {
+                        "description": "Configuration related to Android native apps",
+                        "type": "object"
+                    },
+                    "ios": {
+                        "description": "Configuration related to iOS native apps",
+                        "type": "object"
+                    }
+                }
+            },
+            "android": {
+                "type": "object"
+            },
+            "ios": {
+                "type": "object"
+            },
+            "get_clients_by_id_response_scopes": {
+                "type": "object"
+            },
+            "get_clients_response": {
+                "type": "object",
+                "properties": {
+                    "addons": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "allowed_clients": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_logout_urls": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_origins": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "app_type": {
+                        "description": "The type of application this client represents",
+                        "type": "string"
+                    },
+                    "callbacks": {
+                        "description": "The URLs that Auth0 can use to as a callback for the client",
+                        "type": "array"
+                    },
+                    "client_aliases": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "client_id": {
+                        "description": "The id of the client",
+                        "type": "string"
+                    },
+                    "client_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "client_secret": {
+                        "description": "The client secret, it must not be public",
+                        "type": "string"
+                    },
+                    "cross_origin_auth": {
+                        "description": "<code>true<\/code> if this client can be used to make cross-origin authentication requests, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "cross_origin_loc": {
+                        "description": "Url fo the location in your site where the cross origin verification takes place for the cross-origin auth flow when performing Auth in your own domain instead of Auth0 hosted login page.",
+                        "type": "string"
+                    },
+                    "custom_login_page": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "custom_login_page_on": {
+                        "description": "<code>true<\/code> if the custom login page is to be used, <code>false<\/code> otherwise. Defaults to true",
+                        "type": "boolean"
+                    },
+                    "custom_login_page_preview": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Free text description of the purpose of the Client. (Max character length: <code>140<\/code>)",
+                        "type": "string"
+                    },
+                    "encryption_key": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "form_template": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "is_first_party": {
+                        "description": "Whether this client a first party client or not",
+                        "type": "boolean"
+                    },
+                    "jwt_configuration": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "logo_uri": {
+                        "description": "The URL of the client logo (recommended size: 150x150)",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "oidc_conformant": {
+                        "description": "Whether this client will conform to strict OIDC specifications",
+                        "type": "boolean"
+                    },
+                    "signing_keys": {
+                        "description": "Client signing keys.",
+                        "type": "array"
+                    },
+                    "sso": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "sso_disabled": {
+                        "description": "<code>true<\/code> to disable Single Sign On, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "token_endpoint_auth_method": {
+                        "description": "Defines the requested authentication method for the token endpoint. Possible values are 'none' (public client without a client secret), 'client_secret_post' (client uses HTTP POST parameters) or 'client_secret_basic' (client uses HTTP Basic)",
+                        "type": "string"
+                    },
+                    "web_origins": {
+                        "description": "A set of URLs that represents valid web origins for use with web message response mode",
+                        "type": "array"
+                    }
+                }
+            },
+            "get_clients_response_addons": {
+                "type": "object"
+            },
+            "get_clients_response_android": {
+                "type": "object",
+                "properties": {
+                    "app_package_name": {
+                        "description": "Application package name found in <code>AndroidManifest.xml<\/code>",
+                        "type": "string"
+                    },
+                    "sha256_cert_fingerprints": {
+                        "description": "The SHA256 fingerprints of your app's signing certificate. Multiple fingerprints can be used to support different versions of your app, such as debug and production builds",
+                        "type": "array"
+                    }
+                }
+            },
+            "get_clients_response_client_metadata": {
+                "type": "object"
+            },
+            "get_clients_response_encryption_key": {
+                "type": "object",
+                "properties": {
+                    "cert": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "pub": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "get_clients_response_ios": {
+                "type": "object",
+                "properties": {
+                    "app_bundle_identifier": {
+                        "description": "Assigned by the developer to the app as its unique identifier inside the store, usually is a reverse domain plus the app name: <code>com.you.MyApp<\/code>",
+                        "type": "string"
+                    },
+                    "team_id": {
+                        "description": "Identifier assigned to the account that signs and upload the app to the store",
+                        "type": "string"
+                    }
+                }
+            },
+            "get_clients_response_jwt_configuration": {
+                "type": "object",
+                "properties": {
+                    "alg": {
+                        "description": "Algorithm uses to sign JWTs",
+                        "type": "string"
+                    },
+                    "lifetime_in_seconds": {
+                        "description": "The amount of seconds the JWT will be valid (affects <code>exp<\/code> claim)",
+                        "type": "integer"
+                    },
+                    "scopes": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "secret_encoded": {
+                        "description": "<code>true<\/code> if the client secret is base64 encoded, <code>false<\/code> otherwise. Defaults to <code>true<\/code>",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "get_clients_response_mobile": {
+                "type": "object",
+                "properties": {
+                    "android": {
+                        "description": "Configuration related to Android native apps",
+                        "type": "object"
+                    },
+                    "ios": {
+                        "description": "Configuration related to iOS native apps",
+                        "type": "object"
+                    }
+                }
+            },
+            "get_clients_response_scopes": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body": {
+                "type": "object",
+                "properties": {
+                    "addons": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "allowed_clients": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_logout_urls": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_origins": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "app_type": {
+                        "description": "The type of application this client represents",
+                        "type": "string"
+                    },
+                    "callbacks": {
+                        "description": "The URLs that Auth0 can use to as a callback for the client",
+                        "type": "array"
+                    },
+                    "client_aliases": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "client_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "client_secret": {
+                        "description": "The client secret, it must not be public",
+                        "type": "string"
+                    },
+                    "cross_origin_auth": {
+                        "description": "<code>true<\/code> if this client can be used to make cross-origin authentication requests, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "cross_origin_loc": {
+                        "description": "Url fo the location in your site where the cross origin verification takes place for the cross-origin auth flow when performing Auth in your own domain instead of Auth0 hosted login page.",
+                        "type": "string"
+                    },
+                    "custom_login_page": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "custom_login_page_on": {
+                        "description": "<code>true<\/code> if the custom login page is to be used, <code>false<\/code> otherwise. Defaults to true",
+                        "type": "boolean"
+                    },
+                    "custom_login_page_preview": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Free text description of the purpose of the Client. (Max character length: <code>140<\/code>)",
+                        "type": "string"
+                    },
+                    "encryption_key": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "form_template": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "grant_types": {
+                        "description": "A set of grant types that the client is authorized to use",
+                        "type": "array"
+                    },
+                    "jwt_configuration": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "logo_uri": {
+                        "description": "The URL of the client logo (recommended size: 150x150)",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "oidc_conformant": {
+                        "description": "Whether this client will conform to strict OIDC specifications",
+                        "type": "boolean"
+                    },
+                    "sso": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "sso_disabled": {
+                        "description": "<code>true<\/code> to disable Single Sign On, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "token_endpoint_auth_method": {
+                        "description": "Defines the requested authentication method for the token endpoint. Possible values are 'none' (public client without a client secret), 'client_secret_post' (client uses HTTP POST parameters) or 'client_secret_basic' (client uses HTTP Basic)",
+                        "type": "string"
+                    },
+                    "web_origins": {
+                        "description": "A set of URLs that represents valid web origins for use with web message response mode",
+                        "type": "array"
+                    }
+                }
+            },
+            "grant_types": {
+                "type": "array"
+            },
+            "patch_clients_by_id_body_addons": {
+                "type": "object",
+                "properties": {
+                    "aws": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "azure_blob": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "azure_sb": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "box": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "cloudbees": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "concur": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "dropbox": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "echosign": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "egnyte": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "firebase": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "layer": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "mscrm": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "newrelic": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "office365": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "rms": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "salesforce": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "salesforce_api": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "salesforce_sandbox_api": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "samlp": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "sap_api": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "sentry": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "sharepoint": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "slack": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "springcm": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "wams": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "wsfed": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "zendesk": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "zoom": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "aws": {
+                "type": "object"
+            },
+            "azure_blob": {
+                "type": "object"
+            },
+            "azure_sb": {
+                "type": "object"
+            },
+            "box": {
+                "type": "object"
+            },
+            "cloudbees": {
+                "type": "object"
+            },
+            "concur": {
+                "type": "object"
+            },
+            "dropbox": {
+                "type": "object"
+            },
+            "echosign": {
+                "type": "object"
+            },
+            "egnyte": {
+                "type": "object"
+            },
+            "firebase": {
+                "type": "object"
+            },
+            "layer": {
+                "type": "object"
+            },
+            "mscrm": {
+                "type": "object"
+            },
+            "newrelic": {
+                "type": "object"
+            },
+            "office365": {
+                "type": "object"
+            },
+            "rms": {
+                "type": "object"
+            },
+            "salesforce": {
+                "type": "object"
+            },
+            "salesforce_api": {
+                "type": "object"
+            },
+            "salesforce_sandbox_api": {
+                "type": "object"
+            },
+            "samlp": {
+                "type": "object"
+            },
+            "sap_api": {
+                "type": "object"
+            },
+            "sentry": {
+                "type": "object"
+            },
+            "sharepoint": {
+                "type": "object"
+            },
+            "slack": {
+                "type": "object"
+            },
+            "springcm": {
+                "type": "object"
+            },
+            "wams": {
+                "type": "object"
+            },
+            "wsfed": {
+                "type": "object"
+            },
+            "zendesk": {
+                "type": "object"
+            },
+            "zoom": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_android": {
+                "type": "object",
+                "properties": {
+                    "app_package_name": {
+                        "description": "Application package name found in <code>AndroidManifest.xml<\/code>",
+                        "type": "string"
+                    },
+                    "sha256_cert_fingerprints": {
+                        "description": "The SHA256 fingerprints of your app's signing certificate. Multiple fingerprints can be used to support different versions of your app, such as debug and production builds",
+                        "type": "array"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_aws": {
+                "type": "object",
+                "properties": {
+                    "principal": {
+                        "description": "For example: 'arn:aws:iam::010616021751:saml-provider\/idpname'",
+                        "type": "string"
+                    },
+                    "role": {
+                        "description": "For example: 'arn:aws:iam::010616021751:role\/foo'",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_azure_blob": {
+                "type": "object",
+                "properties": {
+                    "accountName": {
+                        "description": "Your Azure storage account name. Just enter the first segment of the storage URL: http:\/\/<strong>YOUR ACCOUNT NAME<\/strong>.blob.core.windows.net",
+                        "type": "string"
+                    },
+                    "blobName": {
+                        "description": "The entity you want to request a token for: e.g. 'my-blob'. If left blank, the computed SAS will apply to the entire storage container",
+                        "type": "string"
+                    },
+                    "blob_delete": {
+                        "description": "Indicates that the issued token has permission to delete the blob",
+                        "type": "boolean"
+                    },
+                    "blob_read": {
+                        "description": "Indicates that the issued token has permission to read the content, properties, metadata and block list. Use the blob as the source of a copy operation",
+                        "type": "boolean"
+                    },
+                    "blob_write": {
+                        "description": "Indicates that the issued token has permission to create or write content, properties, metadata, or block list. Snapshot or lease the blob. Resize the blob (page blob only). Use the blob as the destination of a copy operation within the same account",
+                        "type": "boolean"
+                    },
+                    "containerName": {
+                        "description": "The container you want to request a token for: e.g. 'my-container'",
+                        "type": "string"
+                    },
+                    "container_delete": {
+                        "description": "Indicates that the issued token has permission to delete any blob in the container",
+                        "type": "boolean"
+                    },
+                    "container_list": {
+                        "description": "Indicates that the issued token has permission to list blobs in the container",
+                        "type": "boolean"
+                    },
+                    "container_read": {
+                        "description": "Indicates that the issued token has permission to read the content, properties, metadata or block list of any blob in the container. Use any blob in the container as the source of a copy operation",
+                        "type": "boolean"
+                    },
+                    "container_write": {
+                        "description": "Indicates that for any blob in the container the issued token has permission to create or write content, properties, metadata, or block list. Snapshot or lease the blob. Resize the blob (page blob only). Use the blob as the destination of a copy operation within the same account",
+                        "type": "boolean"
+                    },
+                    "expiration": {
+                        "description": "Expiration in minutes for the generated token. Default: 5 minutes",
+                        "type": "integer"
+                    },
+                    "signedIdentifier": {
+                        "description": "The shared access policy identifier defined in your storage account resource",
+                        "type": "string"
+                    },
+                    "storageAccessKey": {
+                        "description": "The storage account access key associated storage account",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_azure_sb": {
+                "type": "object",
+                "properties": {
+                    "entityPath": {
+                        "description": "The entity you want to request a token for, for example: 'my-queue'",
+                        "type": "string"
+                    },
+                    "expiration": {
+                        "description": "Expiration in minutes for the generated token. Default: 5 minutes",
+                        "type": "integer"
+                    },
+                    "namespace": {
+                        "description": "Your Azure Service Bus namespace. The first segment of the Service Bus URL: http:\/\/YOUR_NAMESPACE.servicebus.windows.net",
+                        "type": "string"
+                    },
+                    "sasKey": {
+                        "description": "The Primary Key associated with the shared access policy",
+                        "type": "string"
+                    },
+                    "sasKeyName": {
+                        "description": "The shared access policy name defined in your Service Bus entity",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_box": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_client_metadata": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_cloudbees": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_concur": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_dropbox": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_echosign": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_egnyte": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_encryption_key": {
+                "type": "object",
+                "properties": {
+                    "cert": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "pub": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_firebase": {
+                "type": "object",
+                "properties": {
+                    "client_email": {
+                        "description": "The ID of the Service Account you have created (SDK 3+)",
+                        "type": "string"
+                    },
+                    "lifetime_in_seconds": {
+                        "description": "The amount of seconds the JWT will be valid (affects <code>exp<\/code> claim)",
+                        "type": "integer"
+                    },
+                    "private_key": {
+                        "description": "The Private Key for signing the token. (SDK 3+)",
+                        "type": "string"
+                    },
+                    "private_key_id": {
+                        "description": "Optional. ID of the private key (SDK 3+)",
+                        "type": "string"
+                    },
+                    "secret": {
+                        "description": "Firebase's secret",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_ios": {
+                "type": "object",
+                "properties": {
+                    "app_bundle_identifier": {
+                        "description": "Assigned by the developer to the app as its unique identifier inside the store, usually is a reverse domain plus the app name: <code>com.you.MyApp<\/code>",
+                        "type": "string"
+                    },
+                    "team_id": {
+                        "description": "Identifier assigned to the account that signs and upload the app to the store",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_jwt_configuration": {
+                "type": "object",
+                "properties": {
+                    "alg": {
+                        "description": "Algorithm uses to sign JWTs",
+                        "type": "string"
+                    },
+                    "lifetime_in_seconds": {
+                        "description": "The amount of seconds the JWT will be valid (affects <code>exp<\/code> claim)",
+                        "type": "integer"
+                    },
+                    "scopes": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_layer": {
+                "type": "object",
+                "properties": {
+                    "expiration": {
+                        "description": "Expiration in minutes for the generated token. Default: 5 minutes",
+                        "type": "integer"
+                    },
+                    "keyId": {
+                        "description": "The Authentication Key identifier used to sign the Layer token",
+                        "type": "string"
+                    },
+                    "principal": {
+                        "description": "For example: 'arn:aws:iam::010616021751:saml-provider\/idpname'",
+                        "type": "string"
+                    },
+                    "privateKey": {
+                        "description": "The private key for signing the Layer token",
+                        "type": "string"
+                    },
+                    "providerId": {
+                        "description": "The Provider ID of your Layer account",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_mappings": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_mobile": {
+                "type": "object",
+                "properties": {
+                    "android": {
+                        "description": "Configuration related to Android native apps",
+                        "type": "object"
+                    },
+                    "ios": {
+                        "description": "Configuration related to iOS native apps",
+                        "type": "object"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_mscrm": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "description": "Microsoft Dynamics CRM application URL.",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_newrelic": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_office365": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_rms": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "description": "Microsoft Dynamics CRM application URL.",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_salesforce": {
+                "type": "object",
+                "properties": {
+                    "entity_id": {
+                        "description": "The arbitrary logical URL that identifies the Saleforce resource. The format has to be 'https:\/\/whatever.com'",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_salesforce_api": {
+                "type": "object",
+                "properties": {
+                    "clientid": {
+                        "description": "The Consumer Key assigned by Salesforce to the Connected App",
+                        "type": "string"
+                    },
+                    "communityName": {
+                        "description": "The community name",
+                        "type": "string"
+                    },
+                    "community_url_section": {
+                        "description": "The community url section",
+                        "type": "string"
+                    },
+                    "principal": {
+                        "description": "For example: 'arn:aws:iam::010616021751:saml-provider\/idpname'",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_salesforce_sandbox_api": {
+                "type": "object",
+                "properties": {
+                    "clientid": {
+                        "description": "The Consumer Key assigned by Salesforce to the Connected App",
+                        "type": "string"
+                    },
+                    "communityName": {
+                        "description": "The community name",
+                        "type": "string"
+                    },
+                    "community_url_section": {
+                        "description": "The community url section",
+                        "type": "string"
+                    },
+                    "principal": {
+                        "description": "For example: 'arn:aws:iam::010616021751:saml-provider\/idpname'",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_samlp": {
+                "type": "object",
+                "properties": {
+                    "audience": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "authnContextClassRef": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "createUpnClaim": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "destination": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "digestAlgorithm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "issuer": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "lifetimeInSeconds": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "mapIdentities": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "mapUnknownClaimsAsIs": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "mappings": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "nameIdentifierFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "nameIdentifierProbes": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "passthroughClaimsWithNoMapping": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "recipient": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "signResponse": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "signatureAlgorithm": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "mappings": {
+                "type": "object"
+            },
+            "nameIdentifierProbes": {
+                "type": "array"
+            },
+            "patch_clients_by_id_body_sap_api": {
+                "type": "object",
+                "properties": {
+                    "clientid": {
+                        "description": "The Consumer Key assigned by Salesforce to the Connected App",
+                        "type": "string"
+                    },
+                    "nameIdentifierFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "scope": {
+                        "description": "The requested scope for SAP APIs",
+                        "type": "string"
+                    },
+                    "servicePassword": {
+                        "description": "API calls to the token endpoint are authenticated with this password. Usually from a service account",
+                        "type": "string"
+                    },
+                    "tokenEndpointUrl": {
+                        "description": "Your SAP OData server OAuth2 Token Endpoint URL",
+                        "type": "string"
+                    },
+                    "usernameAttribute": {
+                        "description": "The name of the property in the user object that maps to a SAP username, for example: 'email'",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_scopes": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_sentry": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_sharepoint": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_slack": {
+                "type": "object",
+                "properties": {
+                    "team": {
+                        "description": "Slack team name.",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_springcm": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_wams": {
+                "type": "object",
+                "properties": {
+                    "masterkey": {
+                        "description": "The Windows Azure Mobile Services's master key",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_body_wsfed": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_zendesk": {
+                "type": "object"
+            },
+            "patch_clients_by_id_body_zoom": {
+                "type": "object",
+                "properties": {
+                    "account": {
+                        "description": "The first segment of your Vanity URL, for example: 'https:\/\/{account}.zoom.us'",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_response": {
+                "type": "object",
+                "properties": {
+                    "addons": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "allowed_clients": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_logout_urls": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_origins": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "app_type": {
+                        "description": "The type of application this client represents",
+                        "type": "string"
+                    },
+                    "callbacks": {
+                        "description": "The URLs that Auth0 can use to as a callback for the client",
+                        "type": "array"
+                    },
+                    "client_aliases": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "client_id": {
+                        "description": "The id of the client",
+                        "type": "string"
+                    },
+                    "client_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "client_secret": {
+                        "description": "The client secret, it must not be public",
+                        "type": "string"
+                    },
+                    "cross_origin_auth": {
+                        "description": "<code>true<\/code> if this client can be used to make cross-origin authentication requests, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "cross_origin_loc": {
+                        "description": "Url fo the location in your site where the cross origin verification takes place for the cross-origin auth flow when performing Auth in your own domain instead of Auth0 hosted login page.",
+                        "type": "string"
+                    },
+                    "custom_login_page": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "custom_login_page_on": {
+                        "description": "<code>true<\/code> if the custom login page is to be used, <code>false<\/code> otherwise. Defaults to true",
+                        "type": "boolean"
+                    },
+                    "custom_login_page_preview": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Free text description of the purpose of the Client. (Max character length: <code>140<\/code>)",
+                        "type": "string"
+                    },
+                    "encryption_key": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "form_template": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "is_first_party": {
+                        "description": "Whether this client a first party client or not",
+                        "type": "boolean"
+                    },
+                    "jwt_configuration": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "logo_uri": {
+                        "description": "The URL of the client logo (recommended size: 150x150)",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "oidc_conformant": {
+                        "description": "Whether this client will conform to strict OIDC specifications",
+                        "type": "boolean"
+                    },
+                    "signing_keys": {
+                        "description": "Client signing keys.",
+                        "type": "array"
+                    },
+                    "sso": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "sso_disabled": {
+                        "description": "<code>true<\/code> to disable Single Sign On, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "token_endpoint_auth_method": {
+                        "description": "Defines the requested authentication method for the token endpoint. Possible values are 'none' (public client without a client secret), 'client_secret_post' (client uses HTTP POST parameters) or 'client_secret_basic' (client uses HTTP Basic)",
+                        "type": "string"
+                    },
+                    "web_origins": {
+                        "description": "A set of URLs that represents valid web origins for use with web message response mode",
+                        "type": "array"
+                    }
+                }
+            },
+            "patch_clients_by_id_response_addons": {
+                "type": "object"
+            },
+            "patch_clients_by_id_response_android": {
+                "type": "object",
+                "properties": {
+                    "app_package_name": {
+                        "description": "Application package name found in <code>AndroidManifest.xml<\/code>",
+                        "type": "string"
+                    },
+                    "sha256_cert_fingerprints": {
+                        "description": "The SHA256 fingerprints of your app's signing certificate. Multiple fingerprints can be used to support different versions of your app, such as debug and production builds",
+                        "type": "array"
+                    }
+                }
+            },
+            "patch_clients_by_id_response_client_metadata": {
+                "type": "object"
+            },
+            "patch_clients_by_id_response_encryption_key": {
+                "type": "object",
+                "properties": {
+                    "cert": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "pub": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_response_ios": {
+                "type": "object",
+                "properties": {
+                    "app_bundle_identifier": {
+                        "description": "Assigned by the developer to the app as its unique identifier inside the store, usually is a reverse domain plus the app name: <code>com.you.MyApp<\/code>",
+                        "type": "string"
+                    },
+                    "team_id": {
+                        "description": "Identifier assigned to the account that signs and upload the app to the store",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_clients_by_id_response_jwt_configuration": {
+                "type": "object",
+                "properties": {
+                    "alg": {
+                        "description": "Algorithm uses to sign JWTs",
+                        "type": "string"
+                    },
+                    "lifetime_in_seconds": {
+                        "description": "The amount of seconds the JWT will be valid (affects <code>exp<\/code> claim)",
+                        "type": "integer"
+                    },
+                    "scopes": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "secret_encoded": {
+                        "description": "<code>true<\/code> if the client secret is base64 encoded, <code>false<\/code> otherwise. Defaults to <code>true<\/code>",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "patch_clients_by_id_response_mobile": {
+                "type": "object",
+                "properties": {
+                    "android": {
+                        "description": "Configuration related to Android native apps",
+                        "type": "object"
+                    },
+                    "ios": {
+                        "description": "Configuration related to iOS native apps",
+                        "type": "object"
+                    }
+                }
+            },
+            "patch_clients_by_id_response_scopes": {
+                "type": "object"
+            },
+            "post_clients_body": {
+                "type": "object",
+                "properties": {
+                    "addons": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "allowed_clients": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_logout_urls": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_origins": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "app_type": {
+                        "description": "The type of application this client represents",
+                        "type": "string"
+                    },
+                    "callbacks": {
+                        "description": "The URLs that Auth0 can use to as a callback for the client",
+                        "type": "array"
+                    },
+                    "client_aliases": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "client_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "cross_origin_auth": {
+                        "description": "<code>true<\/code> if this client can be used to make cross-origin authentication requests, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "cross_origin_loc": {
+                        "description": "Url fo the location in your site where the cross origin verification takes place for the cross-origin auth flow when performing Auth in your own domain instead of Auth0 hosted login page.",
+                        "type": "string"
+                    },
+                    "custom_login_page": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "custom_login_page_on": {
+                        "description": "<code>true<\/code> if the custom login page is to be used, <code>false<\/code> otherwise. Defaults to true",
+                        "type": "boolean"
+                    },
+                    "custom_login_page_preview": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Free text description of the purpose of the Client. (Max character length: <code>140<\/code>)",
+                        "type": "string"
+                    },
+                    "encryption_key": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "form_template": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "grant_types": {
+                        "description": "A set of grant types that the client is authorized to use",
+                        "type": "array"
+                    },
+                    "is_heroku_app": {
+                        "description": "<code>true<\/code> if the client is a heroku application, <code>false<\/code> otherwise",
+                        "type": "boolean"
+                    },
+                    "jwt_configuration": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "logo_uri": {
+                        "description": "The URL of the client logo (recommended size: 150x150)",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "oidc_conformant": {
+                        "description": "Whether this client will conform to strict OIDC specifications",
+                        "type": "boolean"
+                    },
+                    "sso": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "sso_disabled": {
+                        "description": "<code>true<\/code> to disable Single Sign On, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "token_endpoint_auth_method": {
+                        "description": "Defines the requested authentication method for the token endpoint. Possible values are 'none' (public client without a client secret), 'client_secret_post' (client uses HTTP POST parameters) or 'client_secret_basic' (client uses HTTP Basic)",
+                        "type": "string"
+                    },
+                    "web_origins": {
+                        "description": "A set of URLs that represents valid web origins for use with web message response mode",
+                        "type": "array"
+                    }
+                }
+            },
+            "post_clients_body_addons": {
+                "type": "object",
+                "properties": {
+                    "aws": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "azure_blob": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "azure_sb": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "box": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "cloudbees": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "concur": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "dropbox": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "echosign": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "egnyte": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "firebase": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "layer": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "mscrm": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "newrelic": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "office365": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "rms": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "salesforce": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "salesforce_api": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "salesforce_sandbox_api": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "samlp": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "sap_api": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "sentry": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "sharepoint": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "slack": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "springcm": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "wams": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "wsfed": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "zendesk": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "zoom": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "post_clients_body_android": {
+                "type": "object",
+                "properties": {
+                    "app_package_name": {
+                        "description": "Application package name found in <code>AndroidManifest.xml<\/code>",
+                        "type": "string"
+                    },
+                    "sha256_cert_fingerprints": {
+                        "description": "The SHA256 fingerprints of your app's signing certificate. Multiple fingerprints can be used to support different versions of your app, such as debug and production builds",
+                        "type": "array"
+                    }
+                }
+            },
+            "post_clients_body_aws": {
+                "type": "object",
+                "properties": {
+                    "principal": {
+                        "description": "For example: 'arn:aws:iam::010616021751:saml-provider\/idpname'",
+                        "type": "string"
+                    },
+                    "role": {
+                        "description": "For example: 'arn:aws:iam::010616021751:role\/foo'",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_azure_blob": {
+                "type": "object",
+                "properties": {
+                    "accountName": {
+                        "description": "Your Azure storage account name. Just enter the first segment of the storage URL: http:\/\/<strong>YOUR ACCOUNT NAME<\/strong>.blob.core.windows.net",
+                        "type": "string"
+                    },
+                    "blobName": {
+                        "description": "The entity you want to request a token for: e.g. 'my-blob'. If left blank, the computed SAS will apply to the entire storage container",
+                        "type": "string"
+                    },
+                    "blob_delete": {
+                        "description": "Indicates that the issued token has permission to delete the blob",
+                        "type": "boolean"
+                    },
+                    "blob_read": {
+                        "description": "Indicates that the issued token has permission to read the content, properties, metadata and block list. Use the blob as the source of a copy operation",
+                        "type": "boolean"
+                    },
+                    "blob_write": {
+                        "description": "Indicates that the issued token has permission to create or write content, properties, metadata, or block list. Snapshot or lease the blob. Resize the blob (page blob only). Use the blob as the destination of a copy operation within the same account",
+                        "type": "boolean"
+                    },
+                    "containerName": {
+                        "description": "The container you want to request a token for: e.g. 'my-container'",
+                        "type": "string"
+                    },
+                    "container_delete": {
+                        "description": "Indicates that the issued token has permission to delete any blob in the container",
+                        "type": "boolean"
+                    },
+                    "container_list": {
+                        "description": "Indicates that the issued token has permission to list blobs in the container",
+                        "type": "boolean"
+                    },
+                    "container_read": {
+                        "description": "Indicates that the issued token has permission to read the content, properties, metadata or block list of any blob in the container. Use any blob in the container as the source of a copy operation",
+                        "type": "boolean"
+                    },
+                    "container_write": {
+                        "description": "Indicates that for any blob in the container the issued token has permission to create or write content, properties, metadata, or block list. Snapshot or lease the blob. Resize the blob (page blob only). Use the blob as the destination of a copy operation within the same account",
+                        "type": "boolean"
+                    },
+                    "expiration": {
+                        "description": "Expiration in minutes for the generated token. Default: 5 minutes",
+                        "type": "integer"
+                    },
+                    "signedIdentifier": {
+                        "description": "The shared access policy identifier defined in your storage account resource",
+                        "type": "string"
+                    },
+                    "storageAccessKey": {
+                        "description": "The storage account access key associated storage account",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_azure_sb": {
+                "type": "object",
+                "properties": {
+                    "entityPath": {
+                        "description": "The entity you want to request a token for, for example: 'my-queue'",
+                        "type": "string"
+                    },
+                    "expiration": {
+                        "description": "Expiration in minutes for the generated token. Default: 5 minutes",
+                        "type": "integer"
+                    },
+                    "namespace": {
+                        "description": "Your Azure Service Bus namespace. The first segment of the Service Bus URL: http:\/\/YOUR_NAMESPACE.servicebus.windows.net",
+                        "type": "string"
+                    },
+                    "sasKey": {
+                        "description": "The Primary Key associated with the shared access policy",
+                        "type": "string"
+                    },
+                    "sasKeyName": {
+                        "description": "The shared access policy name defined in your Service Bus entity",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_box": {
+                "type": "object"
+            },
+            "post_clients_body_client_metadata": {
+                "type": "object"
+            },
+            "post_clients_body_cloudbees": {
+                "type": "object"
+            },
+            "post_clients_body_concur": {
+                "type": "object"
+            },
+            "post_clients_body_dropbox": {
+                "type": "object"
+            },
+            "post_clients_body_echosign": {
+                "type": "object"
+            },
+            "post_clients_body_egnyte": {
+                "type": "object"
+            },
+            "post_clients_body_encryption_key": {
+                "type": "object",
+                "properties": {
+                    "cert": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "pub": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_firebase": {
+                "type": "object",
+                "properties": {
+                    "client_email": {
+                        "description": "The ID of the Service Account you have created (SDK 3+)",
+                        "type": "string"
+                    },
+                    "lifetime_in_seconds": {
+                        "description": "The amount of seconds the JWT will be valid (affects <code>exp<\/code> claim)",
+                        "type": "integer"
+                    },
+                    "private_key": {
+                        "description": "The Private Key for signing the token. (SDK 3+)",
+                        "type": "string"
+                    },
+                    "private_key_id": {
+                        "description": "Optional. ID of the private key (SDK 3+)",
+                        "type": "string"
+                    },
+                    "secret": {
+                        "description": "Firebase's secret",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_ios": {
+                "type": "object",
+                "properties": {
+                    "app_bundle_identifier": {
+                        "description": "Assigned by the developer to the app as its unique identifier inside the store, usually is a reverse domain plus the app name: <code>com.you.MyApp<\/code>",
+                        "type": "string"
+                    },
+                    "team_id": {
+                        "description": "Identifier assigned to the account that signs and upload the app to the store",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_jwt_configuration": {
+                "type": "object",
+                "properties": {
+                    "alg": {
+                        "description": "Algorithm uses to sign JWTs",
+                        "type": "string"
+                    },
+                    "lifetime_in_seconds": {
+                        "description": "The amount of seconds the JWT will be valid (affects <code>exp<\/code> claim)",
+                        "type": "integer"
+                    },
+                    "scopes": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "post_clients_body_layer": {
+                "type": "object",
+                "properties": {
+                    "expiration": {
+                        "description": "Expiration in minutes for the generated token. Default: 5 minutes",
+                        "type": "integer"
+                    },
+                    "keyId": {
+                        "description": "The Authentication Key identifier used to sign the Layer token",
+                        "type": "string"
+                    },
+                    "principal": {
+                        "description": "For example: 'arn:aws:iam::010616021751:saml-provider\/idpname'",
+                        "type": "string"
+                    },
+                    "privateKey": {
+                        "description": "The private key for signing the Layer token",
+                        "type": "string"
+                    },
+                    "providerId": {
+                        "description": "The Provider ID of your Layer account",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_mappings": {
+                "type": "object"
+            },
+            "post_clients_body_mobile": {
+                "type": "object",
+                "properties": {
+                    "android": {
+                        "description": "Configuration related to Android native apps",
+                        "type": "object"
+                    },
+                    "ios": {
+                        "description": "Configuration related to iOS native apps",
+                        "type": "object"
+                    }
+                }
+            },
+            "post_clients_body_mscrm": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "description": "Microsoft Dynamics CRM application URL.",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_newrelic": {
+                "type": "object"
+            },
+            "post_clients_body_office365": {
+                "type": "object"
+            },
+            "post_clients_body_rms": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "description": "Microsoft Dynamics CRM application URL.",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_salesforce": {
+                "type": "object",
+                "properties": {
+                    "entity_id": {
+                        "description": "The arbitrary logical URL that identifies the Saleforce resource. The format has to be 'https:\/\/whatever.com'",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_salesforce_api": {
+                "type": "object",
+                "properties": {
+                    "clientid": {
+                        "description": "The Consumer Key assigned by Salesforce to the Connected App",
+                        "type": "string"
+                    },
+                    "communityName": {
+                        "description": "The community name",
+                        "type": "string"
+                    },
+                    "community_url_section": {
+                        "description": "The community url section",
+                        "type": "string"
+                    },
+                    "principal": {
+                        "description": "For example: 'arn:aws:iam::010616021751:saml-provider\/idpname'",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_salesforce_sandbox_api": {
+                "type": "object",
+                "properties": {
+                    "clientid": {
+                        "description": "The Consumer Key assigned by Salesforce to the Connected App",
+                        "type": "string"
+                    },
+                    "communityName": {
+                        "description": "The community name",
+                        "type": "string"
+                    },
+                    "community_url_section": {
+                        "description": "The community url section",
+                        "type": "string"
+                    },
+                    "principal": {
+                        "description": "For example: 'arn:aws:iam::010616021751:saml-provider\/idpname'",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_samlp": {
+                "type": "object",
+                "properties": {
+                    "audience": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "authnContextClassRef": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "createUpnClaim": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "destination": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "digestAlgorithm": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "issuer": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "lifetimeInSeconds": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "mapIdentities": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "mapUnknownClaimsAsIs": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "mappings": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "nameIdentifierFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "nameIdentifierProbes": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "passthroughClaimsWithNoMapping": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "recipient": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "signResponse": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "signatureAlgorithm": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_sap_api": {
+                "type": "object",
+                "properties": {
+                    "clientid": {
+                        "description": "The Consumer Key assigned by Salesforce to the Connected App",
+                        "type": "string"
+                    },
+                    "nameIdentifierFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "scope": {
+                        "description": "The requested scope for SAP APIs",
+                        "type": "string"
+                    },
+                    "servicePassword": {
+                        "description": "API calls to the token endpoint are authenticated with this password. Usually from a service account",
+                        "type": "string"
+                    },
+                    "tokenEndpointUrl": {
+                        "description": "Your SAP OData server OAuth2 Token Endpoint URL",
+                        "type": "string"
+                    },
+                    "usernameAttribute": {
+                        "description": "The name of the property in the user object that maps to a SAP username, for example: 'email'",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_scopes": {
+                "type": "object"
+            },
+            "post_clients_body_sentry": {
+                "type": "object"
+            },
+            "post_clients_body_sharepoint": {
+                "type": "object"
+            },
+            "post_clients_body_slack": {
+                "type": "object",
+                "properties": {
+                    "team": {
+                        "description": "Slack team name.",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_springcm": {
+                "type": "object"
+            },
+            "post_clients_body_wams": {
+                "type": "object",
+                "properties": {
+                    "masterkey": {
+                        "description": "The Windows Azure Mobile Services's master key",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_body_wsfed": {
+                "type": "object"
+            },
+            "post_clients_body_zendesk": {
+                "type": "object"
+            },
+            "post_clients_body_zoom": {
+                "type": "object",
+                "properties": {
+                    "account": {
+                        "description": "The first segment of your Vanity URL, for example: 'https:\/\/{account}.zoom.us'",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_response": {
+                "type": "object",
+                "properties": {
+                    "addons": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "allowed_clients": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_logout_urls": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_origins": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "app_type": {
+                        "description": "The type of application this client represents",
+                        "type": "string"
+                    },
+                    "callbacks": {
+                        "description": "The URLs that Auth0 can use to as a callback for the client",
+                        "type": "array"
+                    },
+                    "client_aliases": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "client_id": {
+                        "description": "The id of the client",
+                        "type": "string"
+                    },
+                    "client_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "client_secret": {
+                        "description": "The client secret, it must not be public",
+                        "type": "string"
+                    },
+                    "cross_origin_auth": {
+                        "description": "<code>true<\/code> if this client can be used to make cross-origin authentication requests, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "cross_origin_loc": {
+                        "description": "Url fo the location in your site where the cross origin verification takes place for the cross-origin auth flow when performing Auth in your own domain instead of Auth0 hosted login page.",
+                        "type": "string"
+                    },
+                    "custom_login_page": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "custom_login_page_on": {
+                        "description": "<code>true<\/code> if the custom login page is to be used, <code>false<\/code> otherwise. Defaults to true",
+                        "type": "boolean"
+                    },
+                    "custom_login_page_preview": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Free text description of the purpose of the Client. (Max character length: <code>140<\/code>)",
+                        "type": "string"
+                    },
+                    "encryption_key": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "form_template": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "is_first_party": {
+                        "description": "Whether this client a first party client or not",
+                        "type": "boolean"
+                    },
+                    "jwt_configuration": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "logo_uri": {
+                        "description": "The URL of the client logo (recommended size: 150x150)",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "oidc_conformant": {
+                        "description": "Whether this client will conform to strict OIDC specifications",
+                        "type": "boolean"
+                    },
+                    "signing_keys": {
+                        "description": "Client signing keys.",
+                        "type": "array"
+                    },
+                    "sso": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "sso_disabled": {
+                        "description": "<code>true<\/code> to disable Single Sign On, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "token_endpoint_auth_method": {
+                        "description": "Defines the requested authentication method for the token endpoint. Possible values are 'none' (public client without a client secret), 'client_secret_post' (client uses HTTP POST parameters) or 'client_secret_basic' (client uses HTTP Basic)",
+                        "type": "string"
+                    },
+                    "web_origins": {
+                        "description": "A set of URLs that represents valid web origins for use with web message response mode",
+                        "type": "array"
+                    }
+                }
+            },
+            "post_clients_response_addons": {
+                "type": "object"
+            },
+            "post_clients_response_android": {
+                "type": "object",
+                "properties": {
+                    "app_package_name": {
+                        "description": "Application package name found in <code>AndroidManifest.xml<\/code>",
+                        "type": "string"
+                    },
+                    "sha256_cert_fingerprints": {
+                        "description": "The SHA256 fingerprints of your app's signing certificate. Multiple fingerprints can be used to support different versions of your app, such as debug and production builds",
+                        "type": "array"
+                    }
+                }
+            },
+            "post_clients_response_client_metadata": {
+                "type": "object"
+            },
+            "post_clients_response_encryption_key": {
+                "type": "object",
+                "properties": {
+                    "cert": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "pub": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_response_ios": {
+                "type": "object",
+                "properties": {
+                    "app_bundle_identifier": {
+                        "description": "Assigned by the developer to the app as its unique identifier inside the store, usually is a reverse domain plus the app name: <code>com.you.MyApp<\/code>",
+                        "type": "string"
+                    },
+                    "team_id": {
+                        "description": "Identifier assigned to the account that signs and upload the app to the store",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_clients_response_jwt_configuration": {
+                "type": "object",
+                "properties": {
+                    "alg": {
+                        "description": "Algorithm uses to sign JWTs",
+                        "type": "string"
+                    },
+                    "lifetime_in_seconds": {
+                        "description": "The amount of seconds the JWT will be valid (affects <code>exp<\/code> claim)",
+                        "type": "integer"
+                    },
+                    "scopes": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "secret_encoded": {
+                        "description": "<code>true<\/code> if the client secret is base64 encoded, <code>false<\/code> otherwise. Defaults to <code>true<\/code>",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "post_clients_response_mobile": {
+                "type": "object",
+                "properties": {
+                    "android": {
+                        "description": "Configuration related to Android native apps",
+                        "type": "object"
+                    },
+                    "ios": {
+                        "description": "Configuration related to iOS native apps",
+                        "type": "object"
+                    }
+                }
+            },
+            "post_clients_response_scopes": {
+                "type": "object"
+            },
+            "post_rotate-secret_response": {
+                "type": "object",
+                "properties": {
+                    "addons": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "allowed_clients": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_logout_urls": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "allowed_origins": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "app_type": {
+                        "description": "The type of application this client represents",
+                        "type": "string"
+                    },
+                    "callbacks": {
+                        "description": "The URLs that Auth0 can use to as a callback for the client",
+                        "type": "array"
+                    },
+                    "client_aliases": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "client_id": {
+                        "description": "The id of the client",
+                        "type": "string"
+                    },
+                    "client_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "client_secret": {
+                        "description": "The client secret, it must not be public",
+                        "type": "string"
+                    },
+                    "cross_origin_auth": {
+                        "description": "<code>true<\/code> if this client can be used to make cross-origin authentication requests, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "cross_origin_loc": {
+                        "description": "Url fo the location in your site where the cross origin verification takes place for the cross-origin auth flow when performing Auth in your own domain instead of Auth0 hosted login page.",
+                        "type": "string"
+                    },
+                    "custom_login_page": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "custom_login_page_on": {
+                        "description": "<code>true<\/code> if the custom login page is to be used, <code>false<\/code> otherwise. Defaults to true",
+                        "type": "boolean"
+                    },
+                    "custom_login_page_preview": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Free text description of the purpose of the Client. (Max character length: <code>140<\/code>)",
+                        "type": "string"
+                    },
+                    "encryption_key": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "form_template": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "is_first_party": {
+                        "description": "Whether this client a first party client or not",
+                        "type": "boolean"
+                    },
+                    "jwt_configuration": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "logo_uri": {
+                        "description": "The URL of the client logo (recommended size: 150x150)",
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "oidc_conformant": {
+                        "description": "Whether this client will conform to strict OIDC specifications",
+                        "type": "boolean"
+                    },
+                    "signing_keys": {
+                        "description": "Client signing keys.",
+                        "type": "array"
+                    },
+                    "sso": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "sso_disabled": {
+                        "description": "<code>true<\/code> to disable Single Sign On, <code>false<\/code> otherwise (default: <code>false<\/code>)",
+                        "type": "boolean"
+                    },
+                    "token_endpoint_auth_method": {
+                        "description": "Defines the requested authentication method for the token endpoint. Possible values are 'none' (public client without a client secret), 'client_secret_post' (client uses HTTP POST parameters) or 'client_secret_basic' (client uses HTTP Basic)",
+                        "type": "string"
+                    },
+                    "web_origins": {
+                        "description": "A set of URLs that represents valid web origins for use with web message response mode",
+                        "type": "array"
+                    }
+                }
+            },
+            "post_rotate-secret_response_addons": {
+                "type": "object"
+            },
+            "post_rotate-secret_response_android": {
+                "type": "object",
+                "properties": {
+                    "app_package_name": {
+                        "description": "Application package name found in <code>AndroidManifest.xml<\/code>",
+                        "type": "string"
+                    },
+                    "sha256_cert_fingerprints": {
+                        "description": "The SHA256 fingerprints of your app's signing certificate. Multiple fingerprints can be used to support different versions of your app, such as debug and production builds",
+                        "type": "array"
+                    }
+                }
+            },
+            "post_rotate-secret_response_client_metadata": {
+                "type": "object"
+            },
+            "post_rotate-secret_response_encryption_key": {
+                "type": "object",
+                "properties": {
+                    "cert": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "pub": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_rotate-secret_response_ios": {
+                "type": "object",
+                "properties": {
+                    "app_bundle_identifier": {
+                        "description": "Assigned by the developer to the app as its unique identifier inside the store, usually is a reverse domain plus the app name: <code>com.you.MyApp<\/code>",
+                        "type": "string"
+                    },
+                    "team_id": {
+                        "description": "Identifier assigned to the account that signs and upload the app to the store",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_rotate-secret_response_jwt_configuration": {
+                "type": "object",
+                "properties": {
+                    "alg": {
+                        "description": "Algorithm uses to sign JWTs",
+                        "type": "string"
+                    },
+                    "lifetime_in_seconds": {
+                        "description": "The amount of seconds the JWT will be valid (affects <code>exp<\/code> claim)",
+                        "type": "integer"
+                    },
+                    "scopes": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "secret_encoded": {
+                        "description": "<code>true<\/code> if the client secret is base64 encoded, <code>false<\/code> otherwise. Defaults to <code>true<\/code>",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "post_rotate-secret_response_mobile": {
+                "type": "object",
+                "properties": {
+                    "android": {
+                        "description": "Configuration related to Android native apps",
+                        "type": "object"
+                    },
+                    "ios": {
+                        "description": "Configuration related to iOS native apps",
+                        "type": "object"
+                    }
+                }
+            },
+            "post_rotate-secret_response_scopes": {
+                "type": "object"
+            },
+            "get_provider_response": {
+                "type": "object",
+                "properties": {
+                    "credentials": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "default_from_address": {
+                        "description": "The default from address",
+                        "type": "string"
+                    },
+                    "enabled": {
+                        "description": "<code>true<\/code> if the email provider is enabled, <code>false<\/code> otherwise",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "settings": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "credentials": {
+                "type": "object"
+            },
+            "settings": {
+                "type": "object"
+            },
+            "get_provider_response_credentials": {
+                "type": "object",
+                "properties": {
+                    "accessKeyId": {
+                        "description": "AWS Access Key ID",
+                        "type": "string"
+                    },
+                    "api_key": {
+                        "description": "API Key",
+                        "type": "string"
+                    },
+                    "api_user": {
+                        "description": "API User",
+                        "type": "string"
+                    },
+                    "region": {
+                        "description": "AWS default region",
+                        "type": "string"
+                    },
+                    "secretAccessKey": {
+                        "description": "AWS Secret Access Key",
+                        "type": "string"
+                    },
+                    "smtp_host": {
+                        "description": "SMTP host",
+                        "type": "string"
+                    },
+                    "smtp_pass": {
+                        "description": "SMTP password",
+                        "type": "string"
+                    },
+                    "smtp_port": {
+                        "description": "SMTP port",
+                        "type": "integer"
+                    },
+                    "smtp_user": {
+                        "description": "SMTP user",
+                        "type": "string"
+                    }
+                }
+            },
+            "get_provider_response_settings": {
+                "type": "object"
+            },
+            "patch_provider_body": {
+                "type": "object",
+                "properties": {
+                    "credentials": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "default_from_address": {
+                        "description": "The default from address",
+                        "type": "string"
+                    },
+                    "enabled": {
+                        "description": "<code>true<\/code> if the email provider is enabled, <code>false<\/code> otherwise",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "settings": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "patch_provider_body_credentials": {
+                "type": "object",
+                "properties": {
+                    "api_key": {
+                        "description": "API Key",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_provider_body_settings": {
+                "type": "object"
+            },
+            "patch_provider_response": {
+                "type": "object",
+                "properties": {
+                    "credentials": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "default_from_address": {
+                        "description": "The default from address",
+                        "type": "string"
+                    },
+                    "enabled": {
+                        "description": "<code>true<\/code> if the email provider is enabled, <code>false<\/code> otherwise",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "settings": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "patch_provider_response_credentials": {
+                "type": "object",
+                "properties": {
+                    "accessKeyId": {
+                        "description": "AWS Access Key ID",
+                        "type": "string"
+                    },
+                    "api_key": {
+                        "description": "API Key",
+                        "type": "string"
+                    },
+                    "api_user": {
+                        "description": "API User",
+                        "type": "string"
+                    },
+                    "region": {
+                        "description": "AWS default region",
+                        "type": "string"
+                    },
+                    "secretAccessKey": {
+                        "description": "AWS Secret Access Key",
+                        "type": "string"
+                    },
+                    "smtp_host": {
+                        "description": "SMTP host",
+                        "type": "string"
+                    },
+                    "smtp_pass": {
+                        "description": "SMTP password",
+                        "type": "string"
+                    },
+                    "smtp_port": {
+                        "description": "SMTP port",
+                        "type": "integer"
+                    },
+                    "smtp_user": {
+                        "description": "SMTP user",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_provider_response_settings": {
+                "type": "object"
+            },
+            "post_provider_body": {
+                "type": "object",
+                "properties": {
+                    "credentials": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "default_from_address": {
+                        "description": "The default from address",
+                        "type": "string"
+                    },
+                    "enabled": {
+                        "description": "<code>true<\/code> if the email provider is enabled, <code>false<\/code> otherwise",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "settings": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "post_provider_body_credentials": {
+                "type": "object",
+                "properties": {
+                    "api_key": {
+                        "description": "API Key",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_provider_body_settings": {
+                "type": "object"
+            },
+            "post_provider_response": {
+                "type": "object",
+                "properties": {
+                    "credentials": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "default_from_address": {
+                        "description": "The default from address",
+                        "type": "string"
+                    },
+                    "enabled": {
+                        "description": "<code>true<\/code> if the email provider is enabled, <code>false<\/code> otherwise",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "settings": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "post_provider_response_credentials": {
+                "type": "object",
+                "properties": {
+                    "accessKeyId": {
+                        "description": "AWS Access Key ID",
+                        "type": "string"
+                    },
+                    "api_key": {
+                        "description": "API Key",
+                        "type": "string"
+                    },
+                    "api_user": {
+                        "description": "API User",
+                        "type": "string"
+                    },
+                    "region": {
+                        "description": "AWS default region",
+                        "type": "string"
+                    },
+                    "secretAccessKey": {
+                        "description": "AWS Secret Access Key",
+                        "type": "string"
+                    },
+                    "smtp_host": {
+                        "description": "SMTP host",
+                        "type": "string"
+                    },
+                    "smtp_pass": {
+                        "description": "SMTP password",
+                        "type": "string"
+                    },
+                    "smtp_port": {
+                        "description": "SMTP port",
+                        "type": "integer"
+                    },
+                    "smtp_user": {
+                        "description": "SMTP user",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_provider_response_settings": {
+                "type": "object"
+            },
+            "get_logs_by_id_response": {
+                "type": "object",
+                "properties": {
+                    "client_id": {
+                        "description": "The id of the client",
+                        "type": "string"
+                    },
+                    "client_name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "date": {
+                        "description": "The date when the event was created",
+                        "type": "string"
+                    },
+                    "details": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "ip": {
+                        "description": "The IP of the log event source",
+                        "type": "string"
+                    },
+                    "location_info": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "type": {
+                        "description": "The log event type",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "The user's unique identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "details": {
+                "type": "object"
+            },
+            "location_info": {
+                "type": "object"
+            },
+            "get_logs_by_id_response_details": {
+                "type": "object"
+            },
+            "get_logs_by_id_response_location_info": {
+                "type": "object"
+            },
+            "get_logs_response": {
+                "type": "object",
+                "properties": {
+                    "client_id": {
+                        "description": "The id of the client",
+                        "type": "string"
+                    },
+                    "client_name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "date": {
+                        "description": "The date when the event was created",
+                        "type": "string"
+                    },
+                    "details": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "ip": {
+                        "description": "The IP of the log event source",
+                        "type": "string"
+                    },
+                    "location_info": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "type": {
+                        "description": "The log event type",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "The user's unique identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "get_logs_response_details": {
+                "type": "object"
+            },
+            "get_logs_response_location_info": {
+                "type": "object"
+            },
+            "get_client-grants_response": {
+                "type": "object",
+                "properties": {
+                    "audience": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "client_id": {
+                        "description": "The id of the client",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The log_id of the log to retrieve",
+                        "type": "string"
+                    },
+                    "scope": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "scope": {
+                "type": "array"
+            },
+            "patch_client-grants_by_id_body": {
+                "type": "object",
+                "properties": {
+                    "scope": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "patch_client-grants_by_id_response": {
+                "type": "object",
+                "properties": {
+                    "audience": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "client_id": {
+                        "description": "The id of the client",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The log_id of the log to retrieve",
+                        "type": "string"
+                    },
+                    "scope": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "post_client-grants_body": {
+                "type": "object",
+                "properties": {
+                    "audience": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "client_id": {
+                        "description": "The id of the client",
+                        "type": "string"
+                    },
+                    "scope": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "delete_user_identity_by_user_id_response": {
+                "type": "object",
+                "properties": {
+                    "access_token": {
+                        "description": "IDP access token returned only if scope read:user_idp_token is defined",
+                        "type": "string"
+                    },
+                    "connection": {
+                        "description": "The name of the connection for the identity.",
+                        "type": "string"
+                    },
+                    "isSocial": {
+                        "description": "<code>true<\/code> if the identity provider is a social provider, <code>false<\/code>s otherwise",
+                        "type": "boolean"
+                    },
+                    "profileData": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "provider": {
+                        "description": "The type of identity provider.",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "The user's unique identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "profileData": {
+                "type": "object"
+            },
+            "delete_user_identity_by_user_id_response_profileData": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "The user's email",
+                        "type": "string"
+                    },
+                    "email_verified": {
+                        "description": "Indicates whether the user's email is verified or not",
+                        "type": "boolean"
+                    },
+                    "family_name": {
+                        "description": "The user's family name",
+                        "type": "string"
+                    },
+                    "given_name": {
+                        "description": "The user's given name",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "phone_number": {
+                        "description": "The user's phone number",
+                        "type": "string"
+                    },
+                    "phone_verified": {
+                        "description": "Indicates whether the user's phone is verified or not",
+                        "type": "boolean"
+                    },
+                    "username": {
+                        "description": "The user's username",
+                        "type": "string"
+                    }
+                }
+            },
+            "get_enrollments_response": {
+                "type": "object",
+                "properties": {
+                    "auth_method": {
+                        "description": "Enrollment type",
+                        "type": "string"
+                    },
+                    "enrolled_at": {
+                        "description": "Enrollment date",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "The log_id of the log to retrieve",
+                        "type": "string"
+                    },
+                    "identifier": {
+                        "description": "Device identifier (usually phone identifier)",
+                        "type": "string"
+                    },
+                    "last_auth": {
+                        "description": "Last authentication",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "phone_number": {
+                        "description": "The user's phone number",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Enrollment status",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The log event type",
+                        "type": "string"
+                    }
+                }
+            },
+            "get_logs_by_user_response": {
+                "type": "object",
+                "properties": {
+                    "client_id": {
+                        "description": "The id of the client",
+                        "type": "string"
+                    },
+                    "client_name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "date": {
+                        "description": "The date when the event was created",
+                        "type": "string"
+                    },
+                    "details": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "ip": {
+                        "description": "The IP of the log event source",
+                        "type": "string"
+                    },
+                    "location_info": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "type": {
+                        "description": "The log event type",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "The user's unique identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "get_logs_by_user_response_details": {
+                "type": "object"
+            },
+            "get_logs_by_user_response_location_info": {
+                "type": "object"
+            },
+            "get_users_by_id_response": {
+                "type": "object",
+                "properties": {
+                    "app_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "blocked": {
+                        "description": "Indicates whether the user was blocked by an administrator or not",
+                        "type": "boolean"
+                    },
+                    "created_at": {
+                        "description": "The date when the user was created",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The user's email",
+                        "type": "string"
+                    },
+                    "email_verified": {
+                        "description": "Indicates whether the user's email is verified or not",
+                        "type": "boolean"
+                    },
+                    "family_name": {
+                        "description": "The user's family name",
+                        "type": "string"
+                    },
+                    "given_name": {
+                        "description": "The user's given name",
+                        "type": "string"
+                    },
+                    "identities": {
+                        "description": "An array of objects with information about the user's identities. More than one will exists in case accounts are linked",
+                        "type": "array"
+                    },
+                    "last_ip": {
+                        "description": "The last login IP address",
+                        "type": "string"
+                    },
+                    "last_login": {
+                        "description": "The last login date for this user",
+                        "type": "string"
+                    },
+                    "logins_count": {
+                        "description": "The number of logins for this user",
+                        "type": "integer"
+                    },
+                    "multifactor": {
+                        "description": "The list of multifactor providers that the user has enrolled to",
+                        "type": "array"
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "nickname": {
+                        "description": "The user's nickname",
+                        "type": "string"
+                    },
+                    "phone_number": {
+                        "description": "The user's phone number",
+                        "type": "string"
+                    },
+                    "phone_verified": {
+                        "description": "Indicates whether the user's phone is verified or not",
+                        "type": "boolean"
+                    },
+                    "picture": {
+                        "description": "The user's picture",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "The date when the user was last updated (modified)",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "The user's unique identifier",
+                        "type": "string"
+                    },
+                    "user_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "username": {
+                        "description": "The user's username",
+                        "type": "string"
+                    }
+                }
+            },
+            "app_metadata": {
+                "type": "object"
+            },
+            "identities": {
+                "type": "array"
+            },
+            "multifactor": {
+                "type": "array"
+            },
+            "user_metadata": {
+                "type": "object"
+            },
+            "get_users_by_id_response_app_metadata": {
+                "type": "object"
+            },
+            "get_users_by_id_response_user_metadata": {
+                "type": "object"
+            },
+            "get_users_response": {
+                "type": "object",
+                "properties": {
+                    "app_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "blocked": {
+                        "description": "Indicates whether the user was blocked by an administrator or not",
+                        "type": "boolean"
+                    },
+                    "created_at": {
+                        "description": "The date when the user was created",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The user's email",
+                        "type": "string"
+                    },
+                    "email_verified": {
+                        "description": "Indicates whether the user's email is verified or not",
+                        "type": "boolean"
+                    },
+                    "family_name": {
+                        "description": "The user's family name",
+                        "type": "string"
+                    },
+                    "given_name": {
+                        "description": "The user's given name",
+                        "type": "string"
+                    },
+                    "identities": {
+                        "description": "An array of objects with information about the user's identities. More than one will exists in case accounts are linked",
+                        "type": "array"
+                    },
+                    "last_ip": {
+                        "description": "The last login IP address",
+                        "type": "string"
+                    },
+                    "last_login": {
+                        "description": "The last login date for this user",
+                        "type": "string"
+                    },
+                    "logins_count": {
+                        "description": "The number of logins for this user",
+                        "type": "integer"
+                    },
+                    "multifactor": {
+                        "description": "The list of multifactor providers that the user has enrolled to",
+                        "type": "array"
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "nickname": {
+                        "description": "The user's nickname",
+                        "type": "string"
+                    },
+                    "phone_number": {
+                        "description": "The user's phone number",
+                        "type": "string"
+                    },
+                    "phone_verified": {
+                        "description": "Indicates whether the user's phone is verified or not",
+                        "type": "boolean"
+                    },
+                    "picture": {
+                        "description": "The user's picture",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "The date when the user was last updated (modified)",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "The user's unique identifier",
+                        "type": "string"
+                    },
+                    "user_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "username": {
+                        "description": "The user's username",
+                        "type": "string"
+                    }
+                }
+            },
+            "get_users_response_app_metadata": {
+                "type": "object"
+            },
+            "get_users_response_user_metadata": {
+                "type": "object"
+            },
+            "patch_users_by_id_body": {
+                "type": "object",
+                "properties": {
+                    "app_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "blocked": {
+                        "description": "Indicates whether the user was blocked by an administrator or not",
+                        "type": "boolean"
+                    },
+                    "client_id": {
+                        "description": "The id of the client",
+                        "type": "string"
+                    },
+                    "connection": {
+                        "description": "The name of the connection for the identity.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The user's email",
+                        "type": "string"
+                    },
+                    "email_verified": {
+                        "description": "Indicates whether the user's email is verified or not",
+                        "type": "boolean"
+                    },
+                    "password": {
+                        "description": "The new password.",
+                        "type": "string"
+                    },
+                    "phone_number": {
+                        "description": "The user's phone number",
+                        "type": "string"
+                    },
+                    "phone_verified": {
+                        "description": "Indicates whether the user's phone is verified or not",
+                        "type": "boolean"
+                    },
+                    "user_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "username": {
+                        "description": "The user's username",
+                        "type": "string"
+                    },
+                    "verify_email": {
+                        "description": "<code>true<\/code> if the email change needs to be verified, <code>false<\/code> otherwise. Only allowed if changing the email",
+                        "type": "boolean"
+                    },
+                    "verify_phone_number": {
+                        "description": "<code>true<\/code> if the <code>phone_number<\/code> change needs to be verified, <code>false<\/code> otherwise. Only allowed if changing the phone number",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "patch_users_by_id_body_app_metadata": {
+                "type": "object"
+            },
+            "patch_users_by_id_body_user_metadata": {
+                "type": "object"
+            },
+            "patch_users_by_id_response": {
+                "type": "object",
+                "properties": {
+                    "app_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "blocked": {
+                        "description": "Indicates whether the user was blocked by an administrator or not",
+                        "type": "boolean"
+                    },
+                    "created_at": {
+                        "description": "The date when the user was created",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The user's email",
+                        "type": "string"
+                    },
+                    "email_verified": {
+                        "description": "Indicates whether the user's email is verified or not",
+                        "type": "boolean"
+                    },
+                    "family_name": {
+                        "description": "The user's family name",
+                        "type": "string"
+                    },
+                    "given_name": {
+                        "description": "The user's given name",
+                        "type": "string"
+                    },
+                    "identities": {
+                        "description": "An array of objects with information about the user's identities. More than one will exists in case accounts are linked",
+                        "type": "array"
+                    },
+                    "last_ip": {
+                        "description": "The last login IP address",
+                        "type": "string"
+                    },
+                    "last_login": {
+                        "description": "The last login date for this user",
+                        "type": "string"
+                    },
+                    "logins_count": {
+                        "description": "The number of logins for this user",
+                        "type": "integer"
+                    },
+                    "multifactor": {
+                        "description": "The list of multifactor providers that the user has enrolled to",
+                        "type": "array"
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "nickname": {
+                        "description": "The user's nickname",
+                        "type": "string"
+                    },
+                    "phone_number": {
+                        "description": "The user's phone number",
+                        "type": "string"
+                    },
+                    "phone_verified": {
+                        "description": "Indicates whether the user's phone is verified or not",
+                        "type": "boolean"
+                    },
+                    "picture": {
+                        "description": "The user's picture",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "The date when the user was last updated (modified)",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "The user's unique identifier",
+                        "type": "string"
+                    },
+                    "user_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "username": {
+                        "description": "The user's username",
+                        "type": "string"
+                    }
+                }
+            },
+            "patch_users_by_id_response_app_metadata": {
+                "type": "object"
+            },
+            "patch_users_by_id_response_user_metadata": {
+                "type": "object"
+            },
+            "post_identities_body": {
+                "type": "object",
+                "properties": {
+                    "connection_id": {
+                        "description": "The id of the connection of the secondary account being linked. This is optional and may be useful in the case of having more than a database connection for the 'auth0' provider.",
+                        "type": "string"
+                    },
+                    "link_with": {
+                        "description": "The JWT of the secondary account being linked. If sending this parameter, the 'provider', 'user_id' and 'connection_id' params are invalid.",
+                        "type": "string"
+                    },
+                    "provider": {
+                        "description": "The type of identity provider.",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "The user's unique identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_identities_response": {
+                "type": "object",
+                "properties": {
+                    "access_token": {
+                        "description": "IDP access token returned only if scope read:user_idp_token is defined",
+                        "type": "string"
+                    },
+                    "connection": {
+                        "description": "The name of the connection for the identity.",
+                        "type": "string"
+                    },
+                    "isSocial": {
+                        "description": "<code>true<\/code> if the identity provider is a social provider, <code>false<\/code>s otherwise",
+                        "type": "boolean"
+                    },
+                    "profileData": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "provider": {
+                        "description": "The type of identity provider.",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "The user's unique identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_identities_response_profileData": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "The user's email",
+                        "type": "string"
+                    },
+                    "email_verified": {
+                        "description": "Indicates whether the user's email is verified or not",
+                        "type": "boolean"
+                    },
+                    "family_name": {
+                        "description": "The user's family name",
+                        "type": "string"
+                    },
+                    "given_name": {
+                        "description": "The user's given name",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "phone_number": {
+                        "description": "The user's phone number",
+                        "type": "string"
+                    },
+                    "phone_verified": {
+                        "description": "Indicates whether the user's phone is verified or not",
+                        "type": "boolean"
+                    },
+                    "username": {
+                        "description": "The user's username",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_recovery-code-regeneration_response": {
+                "type": "object",
+                "properties": {
+                    "recovery_code": {
+                        "description": "New recovery code",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_users_body": {
+                "type": "object",
+                "properties": {
+                    "app_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "connection": {
+                        "description": "The name of the connection for the identity.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The user's email",
+                        "type": "string"
+                    },
+                    "email_verified": {
+                        "description": "Indicates whether the user's email is verified or not",
+                        "type": "boolean"
+                    },
+                    "password": {
+                        "description": "The new password.",
+                        "type": "string"
+                    },
+                    "phone_number": {
+                        "description": "The user's phone number",
+                        "type": "string"
+                    },
+                    "phone_verified": {
+                        "description": "Indicates whether the user's phone is verified or not",
+                        "type": "boolean"
+                    },
+                    "user_id": {
+                        "description": "The user's unique identifier",
+                        "type": "string"
+                    },
+                    "user_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "username": {
+                        "description": "The user's username",
+                        "type": "string"
+                    },
+                    "verify_email": {
+                        "description": "<code>true<\/code> if the email change needs to be verified, <code>false<\/code> otherwise. Only allowed if changing the email",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "post_users_body_app_metadata": {
+                "type": "object"
+            },
+            "post_users_body_user_metadata": {
+                "type": "object"
+            },
+            "post_users_response": {
+                "type": "object",
+                "properties": {
+                    "app_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "blocked": {
+                        "description": "Indicates whether the user was blocked by an administrator or not",
+                        "type": "boolean"
+                    },
+                    "created_at": {
+                        "description": "The date when the user was created",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The user's email",
+                        "type": "string"
+                    },
+                    "email_verified": {
+                        "description": "Indicates whether the user's email is verified or not",
+                        "type": "boolean"
+                    },
+                    "family_name": {
+                        "description": "The user's family name",
+                        "type": "string"
+                    },
+                    "given_name": {
+                        "description": "The user's given name",
+                        "type": "string"
+                    },
+                    "identities": {
+                        "description": "An array of objects with information about the user's identities. More than one will exists in case accounts are linked",
+                        "type": "array"
+                    },
+                    "last_ip": {
+                        "description": "The last login IP address",
+                        "type": "string"
+                    },
+                    "last_login": {
+                        "description": "The last login date for this user",
+                        "type": "string"
+                    },
+                    "logins_count": {
+                        "description": "The number of logins for this user",
+                        "type": "integer"
+                    },
+                    "multifactor": {
+                        "description": "The list of multifactor providers that the user has enrolled to",
+                        "type": "array"
+                    },
+                    "name": {
+                        "description": "The name of the client",
+                        "type": "string"
+                    },
+                    "nickname": {
+                        "description": "The user's nickname",
+                        "type": "string"
+                    },
+                    "phone_number": {
+                        "description": "The user's phone number",
+                        "type": "string"
+                    },
+                    "phone_verified": {
+                        "description": "Indicates whether the user's phone is verified or not",
+                        "type": "boolean"
+                    },
+                    "picture": {
+                        "description": "The user's picture",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "description": "The date when the user was last updated (modified)",
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "description": "The user's unique identifier",
+                        "type": "string"
+                    },
+                    "user_metadata": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "username": {
+                        "description": "The user's username",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_users_response_app_metadata": {
+                "type": "object"
+            },
+            "post_users_response_user_metadata": {
+                "type": "object"
+            },
+            "post_email-verification_body": {
+                "type": "object",
+                "properties": {
+                    "result_url": {
+                        "description": "The user will be redirected to this endpoint once the ticket is used",
+                        "type": "string"
+                    },
+                    "ttl_sec": {
+                        "description": "The ticket's lifetime in seconds starting from the moment of creation. After expiration, the ticket cannot be used to verify the user's email. If not specified or if you send 0, the Auth0 default lifetime of five days will be applied",
+                        "type": "integer"
+                    },
+                    "user_id": {
+                        "description": "The user's unique identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_email-verification_response": {
+                "type": "object",
+                "properties": {
+                    "ticket": {
+                        "description": "The URL that represents the ticket",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_password-change_body": {
+                "type": "object",
+                "properties": {
+                    "connection_id": {
+                        "description": "The id of the connection of the secondary account being linked. This is optional and may be useful in the case of having more than a database connection for the 'auth0' provider.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The user's email",
+                        "type": "string"
+                    },
+                    "result_url": {
+                        "description": "The user will be redirected to this endpoint once the ticket is used",
+                        "type": "string"
+                    },
+                    "ttl_sec": {
+                        "description": "The ticket's lifetime in seconds starting from the moment of creation. After expiration, the ticket cannot be used to verify the user's email. If not specified or if you send 0, the Auth0 default lifetime of five days will be applied",
+                        "type": "integer"
+                    },
+                    "user_id": {
+                        "description": "The user's unique identifier",
+                        "type": "string"
+                    }
+                }
+            },
+            "post_password-change_response": {
+                "type": "object",
+                "properties": {
+                    "ticket": {
+                        "description": "The URL that represents the ticket",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
