@@ -1,0 +1,30 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "v1",
+        "title": "Auth0 Blacklists API",
+        "description": "",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httplogin.auth0.com\/blacklists"
+    ],
+    "paths": [],
+    "components": {
+        "schemas": {
+            "": {
+                "type": "object",
+                "properties": {
+                    "aud": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "jti": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            }
+        }
+    }
+}
