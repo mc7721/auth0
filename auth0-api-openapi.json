@@ -1,0 +1,769 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "Auth0 API",
+        "description": "Auth0 exposes two APIs for developers to consume in their applications.",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httpslogin.auth0.comapi\/v2\/"
+    ],
+    "paths": {
+        "\/blacklists\/tokens": {
+            "get": {
+                "summary": "Get Blacklists Tokens",
+                "description": "Get blacklists tokens.",
+                "operationId": "GetBlacklistsTokens",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "aud",
+                        "in": "query",
+                        "description": "The JWTs aud claim. The client_id of the client for which it was issued"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Post Blacklists Tokens",
+                "description": "Post blacklists tokens.",
+                "operationId": "PostBlacklistsTokens",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/clients": {
+            "get": {
+                "summary": "Get Clients",
+                "description": "Get clients.",
+                "operationId": "GetClients",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "exclude_fields",
+                        "in": "query",
+                        "description": "true if the fields specified are to be excluded from the result, false otherwise."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "A comma separated list of fields to include or exclude (depending on exclude_fields) from the result. Empty to retrieve all fields."
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Post Clients",
+                "description": "Post clients.",
+                "operationId": "PostClients",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/clients\/{id}": {
+            "delete": {
+                "summary": "Delete Clients",
+                "description": "Delete clients.",
+                "operationId": "DeleteClients",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The client_id of the client to delete."
+                    }
+                ]
+            },
+            "get": {
+                "summary": "Get Clients",
+                "description": "Get clients.",
+                "operationId": "GetClients",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "exclude_fields",
+                        "in": "query",
+                        "description": "true if the fields specified are to be excluded from the result, false otherwise."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "A comma separated list of fields to include or exclude (depending on exclude_fields) from the result. Empty to retrieve all fields."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The client_id of the client to delete."
+                    }
+                ]
+            },
+            "patch": {
+                "summary": "Patch Clients",
+                "description": "Patch clients.",
+                "operationId": "PatchClients",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The client_id of the client to delete."
+                    }
+                ]
+            }
+        },
+        "\/jobs\/users-imports": {
+            "post": {
+                "summary": "Post Jobs Users Imports",
+                "description": "Post jobs users imports.",
+                "operationId": "PostJobsUsersImports",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "connection_name",
+                        "in": "form",
+                        "description": "The name of the connection to which users will be added."
+                    },
+                    {
+                        "name": "users",
+                        "in": "form",
+                        "description": "A file containing the users to import"
+                    }
+                ]
+            }
+        },
+        "\/jobs\/{job_id}": {
+            "get": {
+                "summary": "Get Jobs Job",
+                "description": "Get jobs job.",
+                "operationId": "GetJobsJob",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "job_id",
+                        "in": "path",
+                        "description": "The id of the job"
+                    }
+                ]
+            }
+        },
+        "\/stats\/active-users": {
+            "get": {
+                "summary": "Get Stats Active Users",
+                "description": "Get stats active users.",
+                "operationId": "GetStatsActiveUsers",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/stats\/daily": {
+            "get": {
+                "summary": "Get Stats Daily",
+                "description": "Get stats daily.",
+                "operationId": "GetStatsDaily",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "description": "The first day of the period (inclusive) in YYYYMMDD format."
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "description": "The last day of the period (inclusive) in YYYYMMDD format."
+                    }
+                ]
+            }
+        },
+        "\/users": {
+            "delete": {
+                "summary": "Delete Users",
+                "description": "Delete users.",
+                "operationId": "DeleteUsers",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "get": {
+                "summary": "Get Users",
+                "description": "Get users.",
+                "operationId": "GetUsers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "connection",
+                        "in": "query",
+                        "description": "Connection filter."
+                    },
+                    {
+                        "name": "exclude_fields",
+                        "in": "query",
+                        "description": "true if the fields specified are to be excluded from the result, false otherwise."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "A comma separated list of fields to include or exclude (depending on exclude_fields) from the result. Empty to retrieve all fields."
+                    },
+                    {
+                        "name": "include_totals",
+                        "in": "query",
+                        "description": "true if a query summary must be included in the result."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The page number. Zero based."
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "The amount of entries per page."
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "The field to use for sorting. 1 == ascending and -1 == descending."
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Post Users",
+                "description": "Post users.",
+                "operationId": "PostUsers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/users\/{id}": {
+            "delete": {
+                "summary": "Delete Users",
+                "description": "Delete users.",
+                "operationId": "DeleteUsers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The client_id of the client to delete."
+                    }
+                ]
+            },
+            "get": {
+                "summary": "Get Users",
+                "description": "Get users.",
+                "operationId": "GetUsers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "exclude_fields",
+                        "in": "query",
+                        "description": "true if the fields specified are to be excluded from the result, false otherwise."
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "A comma separated list of fields to include or exclude (depending on exclude_fields) from the result. Empty to retrieve all fields."
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The client_id of the client to delete."
+                    }
+                ]
+            },
+            "patch": {
+                "summary": "Patch Users",
+                "description": "Patch users.",
+                "operationId": "PatchUsers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The client_id of the client to delete."
+                    }
+                ]
+            }
+        },
+        "\/users\/{id}\/multifactor\/{provider}": {
+            "delete": {
+                "summary": "Delete Users Multifactor Prover",
+                "description": "Delete users multifactor prover.",
+                "operationId": "DeleteUsersMultifactorProver",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The client_id of the client to delete."
+                    },
+                    {
+                        "name": "provider",
+                        "in": "path",
+                        "description": "The multifactor provider. Supported values duo or google-authenticator"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "": {
+                "type": "object",
+                "properties": {
+                    "aud": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "jti": {
+                        "description": "",
+                        "type": "post"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "client_secret": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "callbacks": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "allowed_origins": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "client_aliases": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "allowed_clients": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "jwt_configuration": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "signing_keys": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "encryption_key": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "sso": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "custom_login_page_off": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "custom_login_page": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "custom_login_page_preview": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "form_template": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "addons": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "lifetime_in_seconds": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "secret_not_encoded": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "scopes": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "alg": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "pub": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "cert": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "is_heroku_app": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "aws": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "azure_sb": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "box": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "cloudbees": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "concur": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "dropbox": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "echosign": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "egnyte": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "firebase": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "newrelic": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "office365": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "salesforce": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "salesforce_api": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "salesforce_sandbox_api": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "samlp": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "sap_api": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "sharepoint": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "springcm": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "wams": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "wsfed": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "zendesk": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "zoom": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "principal": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "role": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "namespace": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "sasKeyName": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "sasKey": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "entityPath": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "expiration": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "secret": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "entity_id": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "clientid": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "communityName": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "community_url_section": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "mappings": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "audience": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "recipient": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "createUpnClaim": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "mapUnknownClaimsAsIs": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "passthroughClaimsWithNoMapping": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "mapIdentities": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "signatureAlgorithm": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "digestAlgorithm": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "issuer": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "destination": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "lifetimeInSeconds": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "signResponse": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "nameIdentifierFormat": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "nameIdentifierProbes": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "authnContextClassRef": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "usernameAttribute": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "tokenEndpointUrl": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "scope": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "servicePassword": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "masterkey": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "account": {
+                        "description": "",
+                        "type": "patch"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tenant": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "connection": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "logins": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "email_verified": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "picture": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "username": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "user_id": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "nickname": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "created_at": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "identities_ids": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "identities": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "app_metadata": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "user_metadata": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "password": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "phone_number": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "given_name": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "family_name": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "blocked": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "verify_email": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "verify_password": {
+                        "description": "",
+                        "type": "delete"
+                    },
+                    "client_id": {
+                        "description": "",
+                        "type": "delete"
+                    }
+                }
+            }
+        }
+    }
+}
