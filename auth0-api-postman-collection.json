@@ -1,5 +1,5 @@
 {
-    "id": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+    "id": "3378cd21651be3b539810f0fda694084",
     "name": "Auth0 API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "e1f3e3cca319dc2a840e52df110326bd",
+            "id": "ea04c58bf18f2ad948a73d17d0fb7bf1",
             "name": "Get Blacklists Tokens",
             "url": "httpslogin.auth0.comapi\/v2\/\/blacklists\/tokens",
             "description": "Get blacklists tokens.",
@@ -37,11 +37,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "440cf83d51c5d567045d303f17acd2cd",
+            "id": "be7c02098732a202d853fdcdcb1a6439",
             "name": "Post Blacklists Tokens",
             "url": "httpslogin.auth0.comapi\/v2\/\/blacklists\/tokens",
             "description": "Post blacklists tokens.",
@@ -68,11 +68,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "0a0574fed44d5b7c57e05de382b18f7a",
+            "id": "c3ed762dae3f1b1f72222af7b4adaae0",
             "name": "Get Clients",
             "url": "httpslogin.auth0.comapi\/v2\/\/clients",
             "description": "Get clients.",
@@ -106,11 +106,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "86a4d78709ced2b6afe9939a329ade1b",
+            "id": "7b3d5e740c34005b799b77d60e734e42",
             "name": "Post Clients",
             "url": "httpslogin.auth0.comapi\/v2\/\/clients",
             "description": "Post clients.",
@@ -137,11 +137,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "bbb9cd80c24d24b20b18dc6066ea759a",
+            "id": "85d9dd2caf297b6db737858bb3fd3c1e",
             "name": "Delete Clients",
             "url": "httpslogin.auth0.comapi\/v2\/\/clients\/{id}",
             "description": "Delete clients.",
@@ -168,11 +168,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "adaf2c09a3aeec043a4e8b1dd4dd5b28",
+            "id": "047886d5234aa84409598e561e8c0bf7",
             "name": "Get Clients",
             "url": "httpslogin.auth0.comapi\/v2\/\/clients\/{id}",
             "description": "Get clients.",
@@ -213,11 +213,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "de978add15d0237fefde3acccbfb91d9",
+            "id": "71dc85395c9ae24c4859e9f95a14c886",
             "name": "Patch Clients",
             "url": "httpslogin.auth0.comapi\/v2\/\/clients\/{id}",
             "description": "Patch clients.",
@@ -251,11 +251,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "1b4eb3829ef8353dc29265276a0f81ee",
+            "id": "65750aa0d199d9f707c4f339bbc2bd8e",
             "name": "Post Jobs Users Imports",
             "url": "httpslogin.auth0.comapi\/v2\/\/jobs\/users-imports",
             "description": "Post jobs users imports.",
@@ -289,11 +289,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "67aa1a0980988825213fb9deeffe0cba",
+            "id": "8bf5f35363c59b8dc88a455e0dc91aec",
             "name": "Get Jobs Job",
             "url": "httpslogin.auth0.comapi\/v2\/\/jobs\/{job_id}",
             "description": "Get jobs job.",
@@ -320,11 +320,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "53b176d1a5ff9d9af432d0f84de55364",
+            "id": "cc3600c068367140d5c3dcbc08fc5dc9",
             "name": "Get Stats Active Users",
             "url": "httpslogin.auth0.comapi\/v2\/\/stats\/active-users",
             "description": "Get stats active users.",
@@ -343,11 +343,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "fddc61b1fb643ca6a0fd2c0975e33a71",
+            "id": "147104e2a763c26154e13f775db12b58",
             "name": "Get Stats Daily",
             "url": "httpslogin.auth0.comapi\/v2\/\/stats\/daily",
             "description": "Get stats daily.",
@@ -381,11 +381,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "8740fce9c174a26ed3fe2ae0b7f74a87",
+            "id": "ec364cf2553124370533be9eb97c5f85",
             "name": "Delete Users",
             "url": "httpslogin.auth0.comapi\/v2\/\/users",
             "description": "Delete users.",
@@ -404,11 +404,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "17d803b7dcea7c07f891f6436536d82c",
+            "id": "b7b3c23481140818ca89bb22069075fd",
             "name": "Get Users",
             "url": "httpslogin.auth0.comapi\/v2\/\/users",
             "description": "Get users.",
@@ -477,11 +477,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "8157b6dd4c167bcf6e1b959c0aedd7fe",
+            "id": "f5010f69165ce306b36a363a86994d5f",
             "name": "Post Users",
             "url": "httpslogin.auth0.comapi\/v2\/\/users",
             "description": "Post users.",
@@ -508,11 +508,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "aaf0c936c3e88b2f9f007cbf11429db0",
+            "id": "0ae110cbd6c91216f06136983cf9888a",
             "name": "Delete Users",
             "url": "httpslogin.auth0.comapi\/v2\/\/users\/{id}",
             "description": "Delete users.",
@@ -539,11 +539,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "358603706c6a6edbe3e07df35beb4df4",
+            "id": "c481bb2078b2ff44e815b8aa39b0f909",
             "name": "Get Users",
             "url": "httpslogin.auth0.comapi\/v2\/\/users\/{id}",
             "description": "Get users.",
@@ -584,11 +584,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "179c0aee1f4584c160aef3f6e2c6f396",
+            "id": "7f0dfcb7ebab684a773b5d1332dbf799",
             "name": "Patch Users",
             "url": "httpslogin.auth0.comapi\/v2\/\/users\/{id}",
             "description": "Patch users.",
@@ -622,11 +622,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         },
         {
-            "id": "22a578c31dbeae4d20ad887e59fd9c72",
+            "id": "08bdab81a06a35ecb7a51e7078e6830d",
             "name": "Delete Users Multifactor Prover",
             "url": "httpslogin.auth0.comapi\/v2\/\/users\/{id}\/multifactor\/{provider}",
             "description": "Delete users multifactor prover.",
@@ -660,7 +660,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "002ec4cd8b3c818369b2fe1d8f3b0df3",
+            "collectionId": "3378cd21651be3b539810f0fda694084",
             "rawModeData": ""
         }
     ]
