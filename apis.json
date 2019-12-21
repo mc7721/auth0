@@ -15,8 +15,8 @@
         "target",
         "users"
     ],
-    "created": "2019-12-19",
-    "modified": "2019-12-19",
+    "created": "2019-12-20",
+    "modified": "2019-12-20",
     "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/auth0\/master\/apis.json",
     "specificationVersion": "0.14",
     "apis": [
@@ -30,11 +30,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/auth0-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/auth0\/master\/auth0-openapi.json"
                 }
             ]
         },
@@ -48,11 +48,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/auth0-users-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-users-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-users-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/auth0\/master\/auth0-users-api-openapi.json"
                 }
             ]
         },
@@ -66,11 +66,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/auth0-blacklists-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-blacklists-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-blacklists-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/auth0\/master\/auth0-blacklists-api-openapi.json"
                 }
             ]
         },
@@ -84,11 +84,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/auth0-jobs-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-jobs-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-jobs-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/auth0\/master\/auth0-jobs-api-openapi.json"
                 }
             ]
         },
@@ -102,11 +102,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/auth0-stats-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-stats-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-stats-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/auth0\/master\/auth0-stats-api-openapi.json"
                 }
             ]
         },
@@ -120,11 +120,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/auth0-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/auth0-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/auth0\/master\/auth0-api-openapi.json"
                 }
             ]
         },
@@ -138,17 +138,21 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/management-auth0-com-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/management-auth0-com.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/management-auth0-com.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/auth0\/master\/management-auth0-com-openapi.json"
                 }
             ]
         }
     ],
     "include": [],
     "x-common": [
+        {
+            "type": "APIs.json",
+            "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/apis.json"
+        },
         {
             "type": "Blog",
             "url": "https:\/\/auth0.com\/blog\/"
