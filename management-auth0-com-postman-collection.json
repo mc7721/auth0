@@ -1,5 +1,5 @@
 {
-    "id": "9eea6c99222a6af9a84c4194a5d82b0b",
+    "id": "c754cdd87c3beb6229777b21745baa4c",
     "name": "management.auth0.com",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "8c8cbb1520b8314c5fc00b8ef55f7e81",
+            "id": "623abb721ea05b26c97de59be782c4c1",
             "name": "Get all clients",
             "url": "http:\/\/management.auth0.com\/\/api\/v2\/clients",
             "description": "Retrieves a list of all client applications. Accepts a list of fields to include or exclude.\n\n<strong>Important:<\/strong> The <code>client_secret<\/code> and <code>encryption_key<\/code> attributes can only be retrieved with the <code>read:client_keys<\/code> scope.\n",
@@ -86,11 +86,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "collectionId": "c754cdd87c3beb6229777b21745baa4c",
             "rawModeData": ""
         },
         {
-            "id": "92bc1f6c0ebb0b08eb26a596bbc25de5",
+            "id": "d56f2387b3219d1da9b7ed32e10d6ea4",
             "name": "Create a client",
             "url": "http:\/\/management.auth0.com\/\/api\/v2\/clients",
             "description": "Creates a new client application. The samples on the right show most attributes that can be used. \n\nWe recommend to let us to generate a safe secret for you, but you can also provide your own with the <code>client_secret<\/code> parameter\n",
@@ -109,11 +109,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "collectionId": "c754cdd87c3beb6229777b21745baa4c",
             "rawModeData": ""
         },
         {
-            "id": "8f8bd808d9f84bfcc4fa0b24559ceef2",
+            "id": "2c740161a9c384a40cca906b9ea1d0e0",
             "name": "Delete the email provider",
             "url": "http:\/\/management.auth0.com\/\/api\/v2\/emails\/provider",
             "description": "<strong>USE WITH CAUTION<\/strong>",
@@ -132,11 +132,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "collectionId": "c754cdd87c3beb6229777b21745baa4c",
             "rawModeData": ""
         },
         {
-            "id": "9753ad449e747125885d3d9015c09f0e",
+            "id": "46c4c2b963c7d99a773e51f803cb5c63",
             "name": "Get the email provider",
             "url": "http:\/\/management.auth0.com\/\/api\/v2\/emails\/provider",
             "description": "This endpoint can be used to retrieve the name of the email provider.",
@@ -170,11 +170,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "collectionId": "c754cdd87c3beb6229777b21745baa4c",
             "rawModeData": ""
         },
         {
-            "id": "7c1f37bb3bf166948605ea69ecf98158",
+            "id": "49b171edb043f01ee38ee044fab3dfcf",
             "name": "Update the email provider",
             "url": "http:\/\/management.auth0.com\/\/api\/v2\/emails\/provider",
             "description": "Can be used to change details for an email provider.\n\nDepending on the type of provider, the <code>credentials<\/code> object requires different attributes:\n<ul><li><code>mandrill<\/code> requires <code>api_key<\/code><\/li><li><code>sendgrid<\/code> requires <code>api_key<\/code><\/li><li><code>sparkpost<\/code> requires <code>api_key<\/code><\/li><li><code>ses<\/code> requires <code>accessKeyId<\/code>, <code>secretAccessKey<\/code> and <code>region<\/code><\/li><li><code>smtp<\/code> requires <code>smtp_host",
@@ -193,11 +193,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "collectionId": "c754cdd87c3beb6229777b21745baa4c",
             "rawModeData": ""
         },
         {
-            "id": "c83a99cfd2d399af677598ecc455a287",
+            "id": "d1363356c237b6b8ec146e5f14d0e90a",
             "name": "Search log events",
             "url": "http:\/\/management.auth0.com\/\/api\/v2\/logs",
             "description": "Retrieves log entries that match the specified search criteria (or list all entries if no criteria is used).<br\/>You can search with a criteria using the <code>q<\/code> parameter or you can search by a specific log ID (search by checkpoint):<br\/><br\/><h5>The search by criteria can use the following parameters:<\/h5><ul> <li><b>q:<\/b> Search Criteria using <a href=\"https:\/\/auth0.com\/docs\/users\/search\/v2\/query-syntax\">Query String Syntax<\/a><\/li><li><b>page:<\/b> The page number. Zero based<\/li><li>",
@@ -280,11 +280,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "collectionId": "c754cdd87c3beb6229777b21745baa4c",
             "rawModeData": ""
         },
         {
-            "id": "22fd5917790e825cb662ff5c7f9bd0e7",
+            "id": "e8d1d901a0e7bfd025c9eb10a51879b4",
             "name": "Get a log event by id",
             "url": "http:\/\/management.auth0.com\/\/api\/v2\/logs\/{id}",
             "description": "Retrieves the data related to the log entry identified by id. This returns a single log entry representation as specified in the schema.",
@@ -311,11 +311,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "collectionId": "c754cdd87c3beb6229777b21745baa4c",
             "rawModeData": ""
         },
         {
-            "id": "7c650f244fef2ae64a31b18cc16dbc76",
+            "id": "1508ade72edfc1578c416a4fa1902529",
             "name": "Get all client grants",
             "url": "http:\/\/management.auth0.com\/\/api\/v2\/client-grants",
             "description": "Manage your <a href='https:\/\/auth0.com\/docs\/api-auth\/grant\/client-credentials'>Client Grants<\/a> (also called Client Credentials Grants). Using Client Grants, your Client can request an Auth0 access token using its credentials (a Client ID and a Client Secret). The access token then represents your Client during API calls.\n\nRefer to <a href='https:\/\/auth0.com\/docs\/api-auth\/config\/using-the-management-api'>Using the Management API for Setting Up a Client Credentials Grant Scenario<\/a> for additio",
@@ -370,11 +370,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "collectionId": "c754cdd87c3beb6229777b21745baa4c",
             "rawModeData": ""
         },
         {
-            "id": "f4c1eb5259639c4ba4615f6f615ace76",
+            "id": "2c0f8798cc8e0b7e48a4dfb5c55fc200",
             "name": "Create a client grant",
             "url": "http:\/\/management.auth0.com\/\/api\/v2\/client-grants",
             "description": "",
@@ -393,11 +393,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "collectionId": "c754cdd87c3beb6229777b21745baa4c",
             "rawModeData": ""
         },
         {
-            "id": "fce8a38dd9f25ac3b39afa136b6ba27c",
+            "id": "2d34e5b5dd92863245ca1a3340c05dae",
             "name": "List or search users",
             "url": "http:\/\/management.auth0.com\/\/api\/v2\/users",
             "description": "This endpoint can be used to retrieve a list of users. With this endpoint it is possible to:\n\n- Specify a search criteria for users\n- Sort the users to be returned\n- Select the fields to be returned\n- Specify the amount of users to retrieve per page and the page number\n <!-- both v2 and v3 are available -->\nThe <code>q<\/code> query parameter can be used to get users that match the specified criteria.\n\n- <a href=\"https:\/\/auth0.com\/docs\/users\/search\/v3\/query-syntax\">Query string syntax for user se",
@@ -480,11 +480,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "collectionId": "c754cdd87c3beb6229777b21745baa4c",
             "rawModeData": ""
         },
         {
-            "id": "876be236cfd9a562dc0fcc338ce54040",
+            "id": "8a4776e40f0948bc358b701c72db6f5a",
             "name": "Create a user",
             "url": "http:\/\/management.auth0.com\/\/api\/v2\/users",
             "description": "Creates a new user according to the JSON object received in <code>body<\/code>. It works <strong>only<\/strong> for <a href=\"https:\/\/auth0.com\/docs\/connections\/database\">database<\/a> and <a href=\"https:\/\/auth0.com\/docs\/connections\/passwordless\">passwordless<\/a> connections.<br\/>\nThe samples on the right show you every attribute that could be used. The attribute <code>connection<\/code> is always mandatory but depending on the type of connection you are using there could be others too. For instance,",
@@ -503,11 +503,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "collectionId": "c754cdd87c3beb6229777b21745baa4c",
             "rawModeData": ""
         },
         {
-            "id": "d175ad1065900811efa28038e80e2ebc",
+            "id": "87c1f1fc2afe6332f283c1c821bf84fc",
             "name": "Create an email verification ticket",
             "url": "http:\/\/management.auth0.com\/\/api\/v2\/tickets\/email-verification",
             "description": "This endpoint can be used to create a ticket to verify a user's email.\n\nLearn more about <a href=\"https:\/\/auth0.com\/docs\/email\/custom#verification-email\">Verification Emails.<\/a> ",
@@ -526,7 +526,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "9eea6c99222a6af9a84c4194a5d82b0b",
+            "collectionId": "c754cdd87c3beb6229777b21745baa4c",
             "rawModeData": ""
         }
     ]
